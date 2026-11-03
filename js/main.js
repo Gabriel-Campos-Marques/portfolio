@@ -1,236 +1,292 @@
 /**
- * Gabriel Campos Marques — Full Stack Engineer
- * Minimalist & Modern Portfolio Scripts
+ * GABRIEL MARQUES — CONTEMPORARY MINIMALIST PORTFOLIO
+ * Linear / Vercel / Raycast Interactive Behaviors
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  initNavbarScroll();
-  initMobileMenu();
-  initThemeToggle();
-  initAboutConsoleTabs();
-  initProjectFilter();
+  initTheme();
+  initCardSpotlight();
+  initMobileNav();
   initScrollSpy();
-  initCurrentYear();
+  initCommandPalette();
+  initYear();
 });
 
 /* ==========================================================================
-   1. NAVBAR SCROLL EFFECT
+   1. THEME TOGGLE (OBSIDIAN DARK DEFAULT / EDITORIAL LIGHT)
    ========================================================================== */
-function initNavbarScroll() {
-  const header = document.getElementById('siteHeader');
-  if (!header) return;
+function initTheme() {
+  const themeBtn = document.getElementById('themeToggle');
+  const saved = localStorage.getItem('gm_minimal_theme') || 'dark';
 
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 20) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
+  if (saved === 'light') {
+    document.body.classList.add('light-mode');
+    updateThemeIcon(true);
+  } else {
+    updateThemeIcon(false);
+  }
+
+  if (themeBtn) {
+    themeBtn.addEventListener('click', toggleTheme);
+  }
+}
+
+function toggleTheme() {
+  const isLight = document.body.classList.toggle('light-mode');
+  localStorage.setItem('gm_minimal_theme', isLight ? 'light' : 'dark');
+  updateThemeIcon(isLight);
+}
+
+function updateThemeIcon(isLight) {
+  const themeBtn = document.getElementById('themeToggle');
+  if (!themeBtn) return;
+  const icon = themeBtn.querySelector('i');
+  if (!icon) return;
+  icon.className = isLight ? 'fas fa-moon' : 'fas fa-sun';
+}
+
+/* ==========================================================================
+   2. SUBTLE MOUSE SPOTLIGHT ON SURFACE CARDS (LINEAR STYLE)
+   ========================================================================== */
+function initCardSpotlight() {
+  const cards = document.querySelectorAll('.surface-card');
+  if (!cards.length) return;
+
+  document.addEventListener('mousemove', (e) => {
+    for (const card of cards) {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      card.style.setProperty('--mouse-x', `${x}px`);
+      card.style.setProperty('--mouse-y', `${y}px`);
     }
   }, { passive: true });
 }
 
 /* ==========================================================================
-   2. MOBILE MENU TOGGLE
+   3. MOBILE NAVIGATION
    ========================================================================== */
-function initMobileMenu() {
-  const toggleBtn = document.getElementById('mobileToggle');
-  const navMenu = document.getElementById('navMenu');
-  const links = document.querySelectorAll('.nav-link');
+function initMobileNav() {
+  const btn = document.getElementById('mobileMenuBtn');
+  const nav = document.getElementById('navLinks');
+  if (!btn || !nav) return;
 
-  if (!toggleBtn || !navMenu) return;
-
-  toggleBtn.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-    const icon = toggleBtn.querySelector('i');
-    if (navMenu.classList.contains('active')) {
-      icon.className = 'fas fa-times';
-    } else {
-      icon.className = 'fas fa-bars';
+  btn.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('open');
+    const icon = btn.querySelector('i');
+    if (icon) {
+      icon.className = isOpen ? 'fas fa-times' : 'fas fa-bars';
     }
   });
 
-  links.forEach(link => {
+  nav.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
-      navMenu.classList.remove('active');
-      const icon = toggleBtn.querySelector('i');
+      nav.classList.remove('open');
+      const icon = btn.querySelector('i');
       if (icon) icon.className = 'fas fa-bars';
     });
   });
 }
 
 /* ==========================================================================
-   3. THEME TOGGLE (DARK / LIGHT)
+   4. SCROLL SPY
    ========================================================================== */
-function initThemeToggle() {
-  const themeBtn = document.getElementById('themeToggle');
-  if (!themeBtn) return;
+function initScrollSpy() {
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
+  if (!sections.length || !navLinks.length) return;
 
-  const currentTheme = localStorage.getItem('gm_theme') || 'dark';
-  if (currentTheme === 'light') {
-    document.body.classList.add('light-theme');
-    updateThemeIcon(true);
+  window.addEventListener('scroll', () => {
+    let current = '';
+    const scrollY = window.scrollY + 140;
+
+    sections.forEach(sec => {
+      const top = sec.offsetTop;
+      const height = sec.offsetHeight;
+      if (scrollY >= top && scrollY < top + height) {
+        current = sec.getAttribute('id');
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
+    });
+  }, { passive: true });
+}
+
+/* ==========================================================================
+   5. COMMAND PALETTE (⌘K / CTRL+K — RAYCAST STYLE)
+   ========================================================================== */
+function initCommandPalette() {
+  const trigger = document.getElementById('cmdTrigger');
+  const backdrop = document.getElementById('cmdBackdrop');
+  const input = document.getElementById('cmdInput');
+  const items = Array.from(document.querySelectorAll('.cmd-item'));
+
+  if (!backdrop || !input) return;
+
+  let selectedIndex = 0;
+
+  function getVisibleItems() {
+    return items.filter(item => item.style.display !== 'none');
   }
 
-  themeBtn.addEventListener('click', () => {
-    const isLight = document.body.classList.toggle('light-theme');
-    localStorage.setItem('gm_theme', isLight ? 'light' : 'dark');
-    updateThemeIcon(isLight);
-  });
+  function updateSelection() {
+    const visible = getVisibleItems();
+    visible.forEach((item, idx) => {
+      item.classList.toggle('selected', idx === selectedIndex);
+    });
+  }
 
-  function updateThemeIcon(isLight) {
-    const icon = themeBtn.querySelector('i');
-    if (!icon) return;
-    if (isLight) {
-      icon.className = 'fas fa-sun';
-    } else {
-      icon.className = 'fas fa-moon';
+  function openCmd() {
+    backdrop.classList.add('open');
+    input.value = '';
+    filterItems('');
+    selectedIndex = 0;
+    updateSelection();
+    setTimeout(() => input.focus(), 40);
+  }
+
+  function closeCmd() {
+    backdrop.classList.remove('open');
+  }
+
+  function filterItems(query) {
+    const q = query.trim().toLowerCase();
+    items.forEach(item => {
+      const text = item.textContent.toLowerCase();
+      const keywords = (item.getAttribute('data-keywords') || '').toLowerCase();
+      const match = !q || text.includes(q) || keywords.includes(q);
+      item.style.display = match ? 'flex' : 'none';
+    });
+    selectedIndex = 0;
+    updateSelection();
+  }
+
+  function executeItem(item) {
+    if (!item) return;
+    const action = item.getAttribute('data-action');
+    const target = item.getAttribute('data-target');
+
+    closeCmd();
+
+    if (action === 'scroll' && target) {
+      const el = document.querySelector(target);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    } else if (action === 'link' && target) {
+      window.open(target, '_blank', 'noopener,noreferrer');
+    } else if (action === 'copy-email') {
+      window.copyToClipboard('gabriel@gmdevwoks.com.br', 'E-mail');
+    } else if (action === 'copy-phone') {
+      window.copyToClipboard('+5519984291707', 'WhatsApp');
+    } else if (action === 'theme') {
+      toggleTheme();
     }
   }
-}
 
-/* ==========================================================================
-   4. ABOUT CONSOLE TABS (INTERACTIVE BLUEPRINT)
-   ========================================================================== */
-function initAboutConsoleTabs() {
-  const tabBtns = document.querySelectorAll('.console-tab-btn');
-  const panes = document.querySelectorAll('.console-pane');
+  if (trigger) {
+    trigger.addEventListener('click', openCmd);
+  }
 
-  if (!tabBtns.length || !panes.length) return;
-
-  tabBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      tabBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      const targetPaneId = btn.getAttribute('data-pane');
-
-      panes.forEach(pane => {
-        if (pane.id === targetPaneId) {
-          pane.classList.add('active');
-        } else {
-          pane.classList.remove('active');
-        }
-      });
-    });
+  backdrop.addEventListener('click', (e) => {
+    if (e.target === backdrop) closeCmd();
   });
-}
 
-function initProjectFilter() {
-  const tabs = document.querySelectorAll('.tab-btn');
-  const items = document.querySelectorAll('.project-item');
+  input.addEventListener('input', (e) => {
+    filterItems(e.target.value);
+  });
 
-  if (!tabs.length || !items.length) return;
+  items.forEach(item => {
+    item.addEventListener('click', () => executeItem(item));
+  });
 
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      tabs.forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
+  document.addEventListener('keydown', (e) => {
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+      e.preventDefault();
+      if (backdrop.classList.contains('open')) {
+        closeCmd();
+      } else {
+        openCmd();
+      }
+      return;
+    }
 
-      const filter = tab.getAttribute('data-filter');
+    if (!backdrop.classList.contains('open')) return;
 
-      items.forEach(item => {
-        const categories = item.getAttribute('data-category') || '';
-        const match = filter === 'all' || categories.split(' ').includes(filter);
-
-        if (match) {
-          item.style.display = 'flex';
-          setTimeout(() => {
-            item.style.opacity = '1';
-            item.style.transform = 'translateY(0)';
-          }, 20);
-        } else {
-          item.style.opacity = '0';
-          item.style.transform = 'translateY(8px)';
-          setTimeout(() => {
-            item.style.display = 'none';
-          }, 150);
-        }
-      });
-    });
+    const visible = getVisibleItems();
+    if (e.key === 'Escape') {
+      e.preventDefault();
+      closeCmd();
+    } else if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      if (visible.length) {
+        selectedIndex = (selectedIndex + 1) % visible.length;
+        updateSelection();
+      }
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      if (visible.length) {
+        selectedIndex = (selectedIndex - 1 + visible.length) % visible.length;
+        updateSelection();
+      }
+    } else if (e.key === 'Enter') {
+      e.preventDefault();
+      if (visible[selectedIndex]) {
+        executeItem(visible[selectedIndex]);
+      }
+    }
   });
 }
 
 /* ==========================================================================
-   5. COPY TO CLIPBOARD HELPER & TOAST
+   6. CLIPBOARD COPY & MINIMAL TOAST
    ========================================================================== */
 window.copyToClipboard = function(text, label) {
   if (navigator.clipboard && window.isSecureContext) {
     navigator.clipboard.writeText(text).then(() => {
-      showMinimalToast(`${label} copiado com sucesso!`);
-    }).catch(() => {
-      fallbackCopy(text, label);
-    });
+      showToast(`${label} copiado para a área de transferência`);
+    }).catch(() => fallbackCopy(text, label));
   } else {
     fallbackCopy(text, label);
   }
 };
 
 function fallbackCopy(text, label) {
-  const textArea = document.createElement('textarea');
-  textArea.value = text;
-  textArea.style.position = 'fixed';
-  textArea.style.left = '-999999px';
-  document.body.appendChild(textArea);
-  textArea.focus();
-  textArea.select();
+  const ta = document.createElement('textarea');
+  ta.value = text;
+  ta.style.position = 'fixed';
+  ta.style.left = '-9999px';
+  document.body.appendChild(ta);
+  ta.focus();
+  ta.select();
   try {
     document.execCommand('copy');
-    showMinimalToast(`${label} copiado com sucesso!`);
-  } catch (err) {
-    showMinimalToast('Não foi possível copiar automaticamente.');
+    showToast(`${label} copiado para a área de transferência`);
+  } catch (_) {
+    showToast('Não foi possível copiar automaticamente');
   }
-  document.body.removeChild(textArea);
+  document.body.removeChild(ta);
 }
 
-function showMinimalToast(message) {
-  const toast = document.getElementById('minimalToast');
-  const textElem = document.getElementById('toastText');
-  if (!toast) return;
+let toastTimer = null;
+function showToast(msg) {
+  const toast = document.getElementById('toast');
+  const toastText = document.getElementById('toastText');
+  if (!toast || !toastText) return;
 
-  if (textElem) textElem.textContent = message;
+  toastText.textContent = msg;
   toast.classList.add('show');
 
-  setTimeout(() => {
+  if (toastTimer) clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => {
     toast.classList.remove('show');
-  }, 3000);
-}
-
-/* ==========================================================================
-   6. SCROLL SPY
-   ========================================================================== */
-function initScrollSpy() {
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-link');
-
-  window.addEventListener('scroll', () => {
-    let current = '';
-    const scrollY = window.pageYOffset;
-
-    sections.forEach(section => {
-      const sectionHeight = section.offsetHeight;
-      const sectionTop = section.offsetTop - 100;
-      const sectionId = section.getAttribute('id');
-
-      if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-        current = sectionId;
-      }
-    });
-
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href') === `#${current}`) {
-        link.classList.add('active');
-      }
-    });
-  }, { passive: true });
+  }, 2800);
 }
 
 /* ==========================================================================
    7. CURRENT YEAR
    ========================================================================== */
-function initCurrentYear() {
-  const yr = document.getElementById('currentYear');
-  if (yr) {
-    yr.textContent = new Date().getFullYear();
-  }
+function initYear() {
+  const el = document.getElementById('yearSpan');
+  if (el) el.textContent = new Date().getFullYear();
 }

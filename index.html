@@ -3,783 +3,1219 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GABRIEL MARQUES | Full Stack Developer · Flutter · Python · K8s · IA</title>
-  
+  <title>Gabriel Marques — Engenheiro de Computação &amp; Desenvolvedor Full Stack</title>
+
   <!-- SEO & Meta Tags -->
-  <meta name="description" content="Portfólio Cyber-Moderno de Gabriel Marques — Full Stack Developer especializado em Flutter, Python, Django REST, Kubernetes, Docker e IA. Atuando na R7ST e fundador da GM DevWorks.">
-  <meta name="keywords" content="Gabriel Marques, Gabriel Campos Marques, Full Stack Developer, Flutter, Python, Django, Kubernetes, K8s, Docker, Delphi, R7ST, GM DevWorks, Engenharia de Computação, UNISAL">
+  <meta name="description" content="Portfólio de Gabriel Marques — Engenheiro de Computação e Desenvolvedor Full Stack. Criação de aplicativos mobile em Flutter, sites e e-commerces sob medida, automação corporativa e sistemas escaláveis em nuvem.">
+  <meta name="keywords" content="Gabriel Marques, Gabriel Campos Marques, Desenvolvedor Mobile, Criar Aplicativo, Flutter, Desenvolvedor Full Stack, Python, Django, E-commerce, Engenheiro de Software">
   <meta name="author" content="Gabriel Campos Marques">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Gabriel Marques | Full Stack Developer">
-  <meta property="og:description" content="Engenharia de software com foco em aplicativos mobile em Flutter, backends escaláveis em Python / Django REST e orquestração com Docker & Kubernetes.">
+  <meta property="og:title" content="Gabriel Marques — Engenheiro de Computação &amp; Full Stack">
+  <meta property="og:description" content="Transformo ideias em aplicativos de alto nível, sites modernos e sistemas que aceleram empresas.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/img/capa-linkedin.jpeg">
+  <meta property="og:image" content="assets/img/EU.jpeg">
 
-  <!-- Google Fonts: Plus Jakarta Sans & Fira Code -->
+  <!-- Google Fonts: Inter & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-  <!-- Font Awesome 6 Icons -->
+  <!-- Font Awesome 6 & Devicon -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-  <!-- Devicon (Official Tech Icons & Vector Logos) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 
-  <!-- Cyber Layout CSS -->
-  <link rel="stylesheet" href="css/layout-capa.css">
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-  <!-- Interactive Cyber Canvas Particle Grid -->
-  <canvas id="cyberGridCanvas"></canvas>
-  <div class="cyber-mesh-glow"></div>
-
-  <!-- Backdrop for Mobile Side Drawer -->
-  <div class="cyber-menu-backdrop" id="menuBackdrop"></div>
+  <!-- Iluminação Ambiente Tridimensional -->
+  <div class="ambient-glow-1" aria-hidden="true"></div>
+  <div class="ambient-glow-2" aria-hidden="true"></div>
 
   <!-- ==========================================================================
-       HEADER & NAVIGATION
+       HEADER & NAVEGAÇÃO
        ========================================================================== -->
-  <header class="cyber-nav" id="cyberNav">
-    <div class="container nav-inner">
-      <a href="#hero" class="cyber-brand">
-        <div class="brand-icon-box">&lt;/&gt;</div>
-        <div class="brand-title">
-          <span class="brand-title-name">GABRIEL MARQUES</span>
-          <span class="brand-title-sub">Full Stack Developer</span>
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="#top" class="brand" aria-label="Voltar ao início">
+        <span class="brand-monogram">GM</span>
+        <div class="brand-info">
+          <span class="brand-name">Gabriel Marques</span>
+          <span class="brand-role">Engenheiro de Computação · Full Stack</span>
         </div>
       </a>
 
-      <!-- Navigation Drawer (Horizontal on Desktop, Off-Canvas Side Drawer on Mobile) -->
-      <nav class="nav-drawer-wrapper" id="navDrawer">
-        <!-- Mobile Drawer Top Header -->
-        <div class="drawer-header-mobile">
-          <div class="drawer-brand">
-            <div class="brand-icon-box" style="width: 32px; height: 32px; font-size: 0.82rem;">&lt;/&gt;</div>
-            <div class="brand-title">
-              <span class="brand-title-name" style="font-size: 0.95rem;">GABRIEL MARQUES</span>
-              <span class="brand-title-sub" style="font-size: 0.65rem;">Full Stack Developer</span>
-            </div>
-          </div>
-          <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Fechar menu lateral">
-            <i class="fas fa-times"></i>
-          </button>
-        </div>
-
-        <ul class="nav-links-list" id="navMenu">
-          <li>
-            <a href="#hero" class="nav-item-link active">
-              <span class="nav-link-content"><i class="fas fa-house nav-link-icon"></i> <span>Início</span></span>
-              <i class="fas fa-chevron-right nav-chevron"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#about" class="nav-item-link">
-              <span class="nav-link-content"><i class="fas fa-user nav-link-icon"></i> <span>Sobre</span></span>
-              <i class="fas fa-chevron-right nav-chevron"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#stack" class="nav-item-link">
-              <span class="nav-link-content"><i class="fas fa-layer-group nav-link-icon"></i> <span>Stack &amp; IA</span></span>
-              <i class="fas fa-chevron-right nav-chevron"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#projects" class="nav-item-link">
-              <span class="nav-link-content"><i class="fas fa-rocket nav-link-icon"></i> <span>Projetos</span></span>
-              <i class="fas fa-chevron-right nav-chevron"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#experience" class="nav-item-link">
-              <span class="nav-link-content"><i class="fas fa-briefcase nav-link-icon"></i> <span>Trajetória</span></span>
-              <i class="fas fa-chevron-right nav-chevron"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#contact" class="nav-item-link">
-              <span class="nav-link-content"><i class="fas fa-paper-plane nav-link-icon"></i> <span>Contato</span></span>
-              <i class="fas fa-chevron-right nav-chevron"></i>
-            </a>
-          </li>
+      <nav aria-label="Navegação principal">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#solutions" class="nav-link">O Que Faço</a></li>
+          <li><a href="#projects" class="nav-link">Projetos</a></li>
+          <li><a href="#process" class="nav-link">Como Realizo</a></li>
+          <li><a href="#architecture" class="nav-link">Tecnologia</a></li>
+          <li><a href="#experience" class="nav-link">Trajetória</a></li>
+          <li><a href="#contact" class="nav-link">Contato</a></li>
         </ul>
-
-        <!-- Mobile Drawer Bottom Quick Actions -->
-        <div class="drawer-footer-mobile">
-          <a href="https://wa.me/5519984291707" target="_blank" rel="noopener noreferrer" class="btn-drawer-whatsapp">
-            <i class="fab fa-whatsapp"></i> WhatsApp Direto
-          </a>
-          <div class="drawer-socials-row">
-            <a href="https://www.linkedin.com/in/gabriel-campos-marques-5597b319b" target="_blank" rel="noopener noreferrer" class="drawer-social-btn" title="LinkedIn">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-            <button class="drawer-social-btn" onclick="copyToClipboard('gabriel@gmdevwoks.com.br', 'E-mail')" title="Copiar E-mail">
-              <i class="far fa-envelope"></i>
-            </button>
-            <a href="https://fixafacilnumeros.com" target="_blank" rel="noopener noreferrer" class="drawer-social-btn" title="Fixa Fácil">
-              <i class="fas fa-globe"></i>
-            </a>
-          </div>
-        </div>
       </nav>
 
-      <div class="nav-actions-group">
-        <button class="theme-toggle-btn" id="themeToggle" title="Alternar tema claro/escuro" aria-label="Alternar tema">
-          <i class="fas fa-moon"></i>
+      <div class="header-actions">
+        <button class="cmd-trigger" id="cmdTrigger" type="button" title="Abrir menu de comandos (⌘K)">
+          <i class="fas fa-magnifying-glass" style="font-size: 0.76rem;"></i>
+          <span>Atalhos</span>
+          <kbd class="cmd-kbd">⌘K</kbd>
         </button>
-        <a href="https://wa.me/5519984291707" target="_blank" rel="noopener noreferrer" class="btn-nav-action">
-          <i class="fab fa-whatsapp"></i> WhatsApp
-        </a>
-        <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Abrir menu lateral">
+
+        <button class="icon-btn" id="themeToggle" type="button" title="Alternar tema claro/escuro" aria-label="Alternar tema">
+          <i class="fas fa-sun"></i>
+        </button>
+
+        <button class="icon-btn mobile-menu-btn" id="mobileMenuBtn" type="button" aria-label="Abrir menu de navegação">
           <i class="fas fa-bars"></i>
         </button>
       </div>
     </div>
   </header>
 
-  <!-- ==========================================================================
-       HERO SECTION — 100% INSPIRADO NA CAPA DO LINKEDIN
-       ========================================================================== -->
-  <section class="hero-cyber-section" id="hero">
-    <div class="container">
-      <div class="hero-cyber-grid">
+  <main id="top">
+
+    <!-- ==========================================================================
+         HERO SECTION (ATRAENTE, HUMANO E ORIENTADO A RESULTADOS)
+         ========================================================================== -->
+    <section class="hero">
+      <div class="container">
         
-        <div class="hero-cyber-info">
-          <div class="cyber-status-tag">
-            <span class="cyber-status-dot"></span>
-            Disponível para projetos &amp; contratações
-          </div>
-
-          <h1 class="hero-cyber-title">
-            GABRIEL <br>
-            <span class="cyan-glow-text">MARQUES</span>
-          </h1>
-
-          <div class="hero-cyber-role-headline">
-            <span class="badge-bracket">{ }</span>
-            <span>Full Stack Developer</span>
-            <span class="badge-bracket">&lt;/&gt;</span>
-          </div>
-
-          <p class="hero-cyber-desc">
-            Desenvolvedor Full Stack de 24 anos e Engenheiro de Computação formado pela <strong>UNISAL</strong>. Atuo na <strong>R7ST</strong> e como fundador da <strong>GM DevWorks</strong>, projetando aplicações móveis de alta fidelidade em <strong>Flutter/Dart</strong>, APIs escaláveis em <strong>Python / Django REST</strong>, orquestração com <strong>Kubernetes (K8s) &amp; Docker</strong> e soluções de <strong>Inteligência Artificial &amp; Elasticsearch</strong>.
-          </p>
-
-          <div class="hero-cyber-actions">
-            <a href="https://wa.me/5519984291707" target="_blank" rel="noopener noreferrer" class="btn-cyber-primary">
-              <i class="fab fa-whatsapp"></i> Falar no WhatsApp
-            </a>
-            <a href="https://www.linkedin.com/in/gabriel-campos-marques-5597b319b" target="_blank" rel="noopener noreferrer" class="btn-cyber-outline">
-              <i class="fab fa-linkedin"></i> LinkedIn
-            </a>
-            <button class="btn-cyber-outline" onclick="copyToClipboard('gabriel@gmdevwoks.com.br', 'E-mail')">
-              <i class="far fa-envelope"></i> Copiar E-mail
-            </button>
-          </div>
-
-          <!-- Floating Badges directly replicating the cover visual badges -->
-          <div class="hero-floating-capsules">
-            <div class="capsule-badge">
-              <span class="capsule-icon-cyber">{ }</span>
-              <span>Python</span>
+        <div class="hero-identity-row">
+          <div class="identity-profile">
+            <div class="avatar-wrapper">
+              <img src="assets/img/EU.jpeg" alt="Gabriel Marques" class="avatar-img">
             </div>
-            <div class="capsule-badge">
-              <span class="capsule-icon-cyber">&lt;/&gt;</span>
-              <span>Flutter</span>
-            </div>
-            <div class="capsule-badge">
-              <i class="devicon-dart-plain colored"></i>
-              <span>Dart</span>
-            </div>
-            <div class="capsule-badge">
-              <i class="fas fa-brain" style="color: #00e5ff;"></i>
-              <span>Prompt Engineer</span>
-            </div>
-            <div class="capsule-badge">
-              <i class="fas fa-microchip" style="color: #a855f7;"></i>
-              <span>IA</span>
-            </div>
-            <div class="capsule-badge">
-              <i class="devicon-django-plain colored"></i>
-              <span>Django</span>
-            </div>
-            <div class="capsule-badge">
-              <i class="devicon-kubernetes-plain colored"></i>
-              <span>Kubernetes</span>
-            </div>
-            <div class="capsule-badge">
-              <i class="devicon-docker-plain colored"></i>
-              <span>Docker</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Hero Cyber Card Frame with Profile Photo -->
-        <div class="hero-cyber-visual">
-          <div class="cyber-card-frame">
-            <div class="card-top-header">
-              <div class="tech-node-badge">
-                <i class="fas fa-circle-nodes"></i> GM-NODE-01
-              </div>
-              <span class="mono" style="font-size: 0.72rem; color: var(--neon-cyan);">ONLINE</span>
-            </div>
-
-            <img src="assets/img/EU.jpeg" alt="Gabriel Campos Marques - Foto de Perfil" class="profile-avatar-cyber">
-
-            <div class="cyber-visual-metrics">
-              <div class="mini-metric-card">
-                <div class="mini-metric-num">Full Stack</div>
-                <div class="mini-metric-label">Mobile + Backend</div>
-              </div>
-              <div class="mini-metric-card">
-                <div class="mini-metric-num">K8s / Cloud</div>
-                <div class="mini-metric-label">Orquestração</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================================================
-       ABOUT SECTION
-       ========================================================================== -->
-  <section class="cyber-section" id="about">
-    <div class="container">
-      <div class="about-cyber-grid">
-        <div class="about-cyber-info">
-          <span class="section-caption-cyber">&lt;Sobre Mim / Perfil /&gt;</span>
-          <h2 class="section-heading-cyber">Engenharia de Software com Propósito &amp; Rigor Técnico</h2>
-          <p class="section-sub-cyber" style="margin-bottom: 1.25rem;">
-            Desenvolvedor Full Stack de 24 anos, graduado em <strong>Engenharia de Computação pela UNISAL</strong>. Minha atuação une velocidade de entrega com arquiteturas escaláveis, seguras e de fácil manutenção.
-          </p>
-          <p class="about-text-p">
-            Atualmente atuo na <strong>R7ST</strong> desenvolvendo sistemas sob demanda, aplicativos móveis fluidos em <strong>Flutter</strong>, back-ends em <strong>Django REST Framework</strong>, orquestração com <strong>Kubernetes/Docker</strong> e soluções com <strong>IA &amp; Elasticsearch</strong>. Também sou fundador da <strong>GM DevWorks</strong>, liderando a criação de plataformas e e-commerces que rodam 24/7 gerando receita real para clientes.
-          </p>
-
-          <div class="about-cyber-stats">
-            <div class="stat-cyber-item">
-              <div class="stat-cyber-number">24<span class="stat-accent">a</span></div>
-              <div class="stat-cyber-label">Idade &amp; Foco Contínuo</div>
-            </div>
-            <div class="stat-cyber-item">
-              <div class="stat-cyber-number">4+<span class="stat-accent">anos</span></div>
-              <div class="stat-cyber-label">Experiência em Software</div>
-            </div>
-            <div class="stat-cyber-item">
-              <div class="stat-cyber-number">100<span class="stat-accent">%</span></div>
-              <div class="stat-cyber-label">Sistemas em Produção</div>
-            </div>
-            <div class="stat-cyber-item">
-              <div class="stat-cyber-number">B.S.<span class="stat-accent">Eng</span></div>
-              <div class="stat-cyber-label">Engenharia de Computação</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="about-cyber-pillars">
-          <div class="pillar-cyber-card">
-            <div class="pillar-icon"><i class="fas fa-layer-group"></i></div>
             <div>
-              <h4>Arquitetura Limpa &amp; MVVM</h4>
-              <p>Separação rígida de responsabilidades, contratos de API bem definidos, Result Pattern e manutenibilidade a longo prazo.</p>
+              <div class="identity-name">Gabriel Marques</div>
+              <div class="identity-sub">Engenheiro de Computação &amp; Desenvolvedor de Produtos Digitais</div>
             </div>
           </div>
 
-          <div class="pillar-cyber-card">
-            <div class="pillar-icon"><i class="fas fa-cubes"></i></div>
-            <div>
-              <h4>DevOps &amp; Escalabilidade Resiliente</h4>
-              <p>Containers Docker, orquestração com Kubernetes (K8s), pipelines de CI/CD automatizadas e alta disponibilidade em Linux.</p>
-            </div>
-          </div>
-
-          <div class="pillar-cyber-card">
-            <div class="pillar-icon"><i class="fas fa-brain"></i></div>
-            <div>
-              <h4>Inovação com IA &amp; Search</h4>
-              <p>Indexação e buscas avançadas com Elasticsearch e engenharia de prompts aplicada a fluxos operacionais inteligentes.</p>
-            </div>
+          <div class="status-pill">
+            <span class="status-dot"></span>
+            <span>Disponível para novos projetos e consultoria</span>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- ==========================================================================
-       STACK & BLUEPRINT (BENTO GRID)
-       ========================================================================== -->
-  <section class="cyber-section" id="stack">
-    <div class="container">
-      <div style="margin-bottom: 3.5rem; max-width: 720px;">
-        <span class="section-caption-cyber">&lt;Stack &amp; Arquitetura /&gt;</span>
-        <h2 class="section-heading-cyber">Full Stack Blueprint &amp; IA</h2>
-        <p class="section-sub-cyber">
-          Tecnologias de ponta a ponta aplicadas em aplicações móveis, microsserviços, orquestração em nuvem e inteligência artificial.
+        <h1 class="hero-headline">
+          Transformo ideias em <span class="gradient-text">aplicativos de alto impacto, sites que vendem</span> e sistemas que aceleram empresas.
+        </h1>
+
+        <p class="hero-lead">
+          Desenvolvedor Full Stack na <strong>R7ST</strong> e fundador da <strong>GM DevWorks</strong>. Crio soluções completas do zero: desde o desenho visual intuitivo que qualquer cliente entende, até o aplicativo publicado nas lojas (iOS e Android) e a infraestrutura segura na nuvem.
         </p>
+
+        <div class="hero-actions">
+          <a href="https://wa.me/5519984291707?text=Ol%C3%A1%20Gabriel!%20Vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar%20sobre%20uma%20ideia/projeto." target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            <i class="fab fa-whatsapp"></i>
+            <span>Conversar sobre o seu projeto</span>
+          </a>
+
+          <a href="#projects" class="btn btn-secondary">
+            <i class="fas fa-layer-group"></i>
+            <span>Ver projetos realizados</span>
+          </a>
+
+          <a href="#process" class="btn btn-ghost">
+            <i class="fas fa-arrow-down"></i>
+            <span>Como realizo seu projeto</span>
+          </a>
+        </div>
+
+        <!-- Métricas & Confiança -->
+        <div class="hero-value-grid">
+          <div class="value-card">
+            <span class="value-number">+4 Anos</span>
+            <span class="value-title">Em Produção Real</span>
+            <span class="value-desc">Desenvolvendo sistemas, lojas e apps ativos gerando faturamento.</span>
+          </div>
+
+          <div class="value-card">
+            <span class="value-number">100%</span>
+            <span class="value-title">De Ponta a Ponta</span>
+            <span class="value-desc">Do design das telas aos servidores na nuvem, sem depender de terceiros.</span>
+          </div>
+
+          <div class="value-card">
+            <span class="value-number">iOS &amp; Android</span>
+            <span class="value-title">Apps Multiplataforma</span>
+            <span class="value-desc">Um único código ultra-fluido em Flutter para iPhone e celulares Android.</span>
+          </div>
+
+          <div class="value-card">
+            <span class="value-number">B.S. Eng.</span>
+            <span class="value-title">Engenharia de Computação</span>
+            <span class="value-desc">Formação acadêmica sólida pelo Centro Universitário Salesiano (UNISAL).</span>
+          </div>
+        </div>
+
       </div>
+    </section>
 
-      <div class="bento-cyber-grid">
-        <!-- Bento 1: Mobile Flutter -->
-        <div class="bento-box bento-col-8">
-          <div class="bento-box-head">
-            <div class="bento-icon-wrapper"><i class="devicon-flutter-plain colored"></i></div>
-            <span class="bento-tag-pill">&lt;/&gt; Mobile Client</span>
-          </div>
-          <div class="bento-box-body">
-            <h3>Desenvolvimento Mobile Multiplataforma (Flutter / Dart)</h3>
-            <p>
-              Criação de aplicativos nativos fluidos a 60/120 FPS para iOS e Android. Aplicação estrita do padrão MVVM, gerenciamento de estado previsível (BLoC/Provider), Result Pattern para tratamento funcional de erros e Design Systems modulares.
-            </p>
-          </div>
-          <div class="bento-tags-list">
-            <span class="bento-tag-item"><i class="devicon-flutter-plain colored"></i> Flutter</span>
-            <span class="bento-tag-item"><i class="devicon-dart-plain colored"></i> Dart</span>
-            <span class="bento-tag-item"><i class="fas fa-shapes"></i> MVVM</span>
-            <span class="bento-tag-item"><i class="devicon-javascript-plain colored"></i> JavaScript (ES6+)</span>
-          </div>
-        </div>
-
-        <!-- Bento 2: Backend Django & Python -->
-        <div class="bento-box bento-col-4">
-          <div class="bento-box-head">
-            <div class="bento-icon-wrapper"><i class="devicon-python-plain colored"></i></div>
-            <span class="bento-tag-pill">{ } Backend API</span>
-          </div>
-          <div class="bento-box-body">
-            <h3>Back-end &amp; Microsserviços</h3>
-            <p>
-              APIs RESTful de alta velocidade em Python / Django REST Framework com Service Layer desacoplada, autenticação JWT, throttling e segurança preventiva OWASP.
-            </p>
-          </div>
-          <div class="bento-tags-list">
-            <span class="bento-tag-item">Python</span>
-            <span class="bento-tag-item">Django REST</span>
-            <span class="bento-tag-item">JWT Auth</span>
-          </div>
-        </div>
-
-        <!-- Bento 3: Kubernetes & DevOps -->
-        <div class="bento-box bento-col-6">
-          <div class="bento-box-head">
-            <div class="bento-icon-wrapper"><i class="devicon-kubernetes-plain colored"></i></div>
-            <span class="bento-tag-pill">☸️ Orquestração</span>
-          </div>
-          <div class="bento-box-body">
-            <h3>Kubernetes (K8s), Docker &amp; CI/CD</h3>
-            <p>
-              Provisionamento de ambientes conteinerizados, gerenciamento de Pods, Deployments, Services e Ingress no Kubernetes, automação de deploys e governança Linux.
-            </p>
-          </div>
-          <div class="bento-tags-list">
-            <span class="bento-tag-item">Kubernetes (K8s)</span>
-            <span class="bento-tag-item">Docker</span>
-            <span class="bento-tag-item">Git / GitHub</span>
-            <span class="bento-tag-item">Linux</span>
-          </div>
-        </div>
-
-        <!-- Bento 4: Data & AI -->
-        <div class="bento-box bento-col-6">
-          <div class="bento-box-head">
-            <div class="bento-icon-wrapper"><i class="devicon-postgresql-plain colored"></i></div>
-            <span class="bento-tag-pill">🧠 Data &amp; AI</span>
-          </div>
-          <div class="bento-box-body">
-            <h3>PostgreSQL, Elasticsearch &amp; IA</h3>
-            <p>
-              Modelagem relacional otimizada sem N+1 queries (`select_related`), indexação e buscas distribuídas com Elasticsearch e integrações com Inteligência Artificial e Prompt Engineering.
-            </p>
-          </div>
-          <div class="bento-tags-list">
-            <span class="bento-tag-item">PostgreSQL</span>
-            <span class="bento-tag-item">Elasticsearch</span>
-            <span class="bento-tag-item">Prompt Engineering</span>
-            <span class="bento-tag-item">Delphi / SQL</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================================================
-       PROJETOS REAIS & EM PRODUÇÃO
-       ========================================================================== -->
-  <section class="cyber-section" id="projects">
-    <div class="container">
-      <div style="margin-bottom: 3.5rem; max-width: 720px;">
-        <span class="section-caption-cyber">&lt;Entregas Reais /&gt;</span>
-        <h2 class="section-heading-cyber">Projetos em Produção</h2>
-        <p class="section-sub-cyber">
-          Sistemas comerciais, e-commerces e plataformas corporativas desenvolvidas e ativas no mercado.
-        </p>
-      </div>
-
-      <div class="projects-cyber-grid">
-        <!-- Projeto 1: Fixa Fácil Números -->
-        <div class="project-cyber-card">
-          <div>
-            <div class="project-cyber-top">
-              <span class="project-scope-badge">E-Commerce &amp; Web</span>
-              <span class="project-live-indicator">Em Produção</span>
-            </div>
-            <h3 class="project-cyber-title">Fixa Fácil Números</h3>
-            <div class="project-cyber-summary">E-commerce de customização de números residenciais e comerciais</div>
-            
-            <div class="project-cyber-points">
-              <div class="project-point-row">
-                <i class="fas fa-angle-right"></i>
-                <span><strong>Cálculo de Frete Automatizado:</strong> Cotação de envio com CEPs em tempo real.</span>
-              </div>
-              <div class="project-point-row">
-                <i class="fas fa-angle-right"></i>
-                <span><strong>Campos de Personalização:</strong> Seleção interativa de tamanhos, acabamentos e fontes.</span>
-              </div>
-              <div class="project-point-row">
-                <i class="fas fa-angle-right"></i>
-                <span><strong>Alta Performance de Conversão:</strong> Checkout rápido e interface otimizada para mobile.</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="project-cyber-footer">
-            <span class="project-cyber-tech"><i class="fas fa-globe"></i> fixafacilnumeros.com</span>
-            <a href="https://fixafacilnumeros.com" target="_blank" rel="noopener noreferrer" class="btn-cyber-link">
-              Acessar Site <i class="fas fa-arrow-up-right-from-square"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- Projeto 2: Ventura Arquitetura -->
-        <div class="project-cyber-card">
-          <div>
-            <div class="project-cyber-top">
-              <span class="project-scope-badge">Institucional &amp; Portfólio</span>
-              <span class="project-live-indicator">Em Produção</span>
-            </div>
-            <h3 class="project-cyber-title">Ventura Arquitetura + Interiores</h3>
-            <div class="project-cyber-summary">Plataforma institucional de alto padrão para escritório de arquitetura</div>
-            
-            <div class="project-cyber-points">
-              <div class="project-point-row">
-                <i class="fas fa-angle-right"></i>
-                <span><strong>Galeria Imersiva:</strong> Showcase visual sofisticado de projetos autorais residenciais e comerciais.</span>
-              </div>
-              <div class="project-point-row">
-                <i class="fas fa-angle-right"></i>
-                <span><strong>Design Editorial &amp; Responsivo:</strong> Fluidez em telas desktop ultrawide, tablets e smartphones.</span>
-              </div>
-              <div class="project-point-row">
-                <i class="fas fa-angle-right"></i>
-                <span><strong>SEO &amp; Carregamento Rápido:</strong> Otimização de imagens HD e indexação para mecanismos de busca.</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="project-cyber-footer">
-            <span class="project-cyber-tech"><i class="fas fa-globe"></i> venturaarquitetura.com.br</span>
-            <a href="https://venturaarquitetura.com.br" target="_blank" rel="noopener noreferrer" class="btn-cyber-link">
-              Acessar Site <i class="fas fa-arrow-up-right-from-square"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- Projeto 3: Tesouraria IPA -->
-        <div class="project-cyber-card">
-          <div>
-            <div class="project-cyber-top">
-              <span class="project-scope-badge">Back-end &amp; Web</span>
-              <span class="project-live-indicator">Em Produção</span>
-            </div>
-            <h3 class="project-cyber-title">Sistema de Tesouraria IPA</h3>
-            <div class="project-cyber-summary">Automação financeira corporativa, conciliação e auditoria contábil</div>
-            
-            <div class="project-cyber-points">
-              <div class="project-point-row">
-                <i class="fas fa-angle-right"></i>
-                <span><strong>Parser de Extratos .OFX:</strong> Leitura e categorização automática de transações bancárias.</span>
-              </div>
-              <div class="project-point-row">
-                <i class="fas fa-angle-right"></i>
-                <span><strong>Conciliação XLSX:</strong> Integração com planilhas contábeis e auditoria de transações.</span>
-              </div>
-              <div class="project-point-row">
-                <i class="fas fa-angle-right"></i>
-                <span><strong>Relatórios em Tempo Real:</strong> Controle analítico de fluxo de caixa e centros de custos.</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="project-cyber-footer">
-            <span class="project-cyber-tech"><i class="devicon-django-plain colored"></i> Django REST · PostgreSQL</span>
-            <a href="https://wa.me/5519984291707?text=Ol%C3%A1%20Gabriel,%20gostaria%20de%20conversar%20sobre%20o%20Sistema%20de%20Tesouraria." target="_blank" rel="noopener noreferrer" class="btn-cyber-link">
-              Conversar <i class="fas fa-arrow-up-right-from-square"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- Projeto 4: Finance App Mobile -->
-        <div class="project-cyber-card">
-          <div>
-            <div class="project-cyber-top">
-              <span class="project-scope-badge">Mobile (iOS &amp; Android)</span>
-              <span class="project-live-indicator">Ativo</span>
-            </div>
-            <h3 class="project-cyber-title">Finance App (Controle Orçamentário)</h3>
-            <div class="project-cyber-summary">Aplicativo mobile de gestão financeira pessoal e empresarial</div>
-            
-            <div class="project-cyber-points">
-              <div class="project-point-row">
-                <i class="fas fa-angle-right"></i>
-                <span><strong>Arquitetura MVVM:</strong> Desacoplamento estrito entre View, ViewModel e Service Layer.</span>
-              </div>
-              <div class="project-point-row">
-                <i class="fas fa-angle-right"></i>
-                <span><strong>Design System:</strong> Theming consistente com suporte a Dark/Light Mode no Flutter.</span>
-              </div>
-              <div class="project-point-row">
-                <i class="fas fa-angle-right"></i>
-                <span><strong>Gráficos Interativos:</strong> Dashboards dinâmicos de gastos, faturamento e metas orçamentárias.</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="project-cyber-footer">
-            <span class="project-cyber-tech"><i class="devicon-flutter-plain colored"></i> Flutter · MVVM · REST</span>
-            <a href="https://wa.me/5519984291707?text=Ol%C3%A1%20Gabriel,%20quero%20conhecer%20o%20Finance%20App." target="_blank" rel="noopener noreferrer" class="btn-cyber-link">
-              Conversar <i class="fas fa-arrow-up-right-from-square"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================================================
-       TRAJETÓRIA & EXPERIÊNCIA
-       ========================================================================== -->
-  <section class="cyber-section" id="experience">
-    <div class="container">
-      <div style="margin-bottom: 3.5rem; max-width: 720px;">
-        <span class="section-caption-cyber">&lt;Trajetória &amp; Carreira /&gt;</span>
-        <h2 class="section-heading-cyber">Experiência Profissional &amp; Formação</h2>
-        <p class="section-sub-cyber">
-          Histórico fidedigno de atuação na indústria de software e formação acadêmica.
-        </p>
-      </div>
-
-      <div class="career-cyber-list">
-        <!-- 1. R7ST -->
-        <div class="career-cyber-card">
-          <div class="career-meta-box">
-            <span class="career-period-tag">JUN 2024 — PRESENTE</span>
-            <h3 class="career-company-name">R7ST</h3>
-            <div class="career-role-title">Desenvolvedor Full Stack</div>
-            <div class="career-location-text"><i class="fas fa-location-dot"></i> Santa Bárbara d'Oeste, SP</div>
-          </div>
-          <div>
-            <p class="career-desc-text">
-              Desenvolvimento de software sob demanda, criação de aplicações web e aplicativos móveis multiplataforma com <strong>Flutter</strong> e <strong>Django REST Framework</strong>. Implementação de práticas de <strong>DevOps (Docker, Kubernetes e CI/CD)</strong>, indexação avançada com <strong>Elasticsearch</strong> e integração de soluções de <strong>Inteligência Artificial &amp; Engenharia de Prompts</strong>.
-            </p>
-            <div class="career-pills-wrap">
-              <span class="career-pill">Flutter</span>
-              <span class="career-pill">Python / Django</span>
-              <span class="career-pill">Kubernetes (K8s)</span>
-              <span class="career-pill">Docker</span>
-              <span class="career-pill">Elasticsearch</span>
-              <span class="career-pill">IA &amp; Prompts</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- 2. GM DevWorks -->
-        <div class="career-cyber-card">
-          <div class="career-meta-box">
-            <span class="career-period-tag">2024 — PRESENTE</span>
-            <h3 class="career-company-name">GM DevWorks</h3>
-            <div class="career-role-title">Fundador &amp; Full Stack Lead</div>
-            <div class="career-location-text"><i class="fas fa-location-dot"></i> Sumaré, SP (Remoto)</div>
-          </div>
-          <div>
-            <p class="career-desc-text">
-              Concepção e desenvolvimento de plataformas digitais em produção ativa, incluindo <strong>Fixa Fácil Números</strong> (e-commerce com cálculo de frete em tempo real), <strong>Ventura Arquitetura</strong> (plataforma institucional de alto padrão) e <strong>Sistema de Tesouraria IPA</strong> (automação contábil com parser .OFX).
-            </p>
-            <div class="career-pills-wrap">
-              <span class="career-pill">Flutter</span>
-              <span class="career-pill">Django REST</span>
-              <span class="career-pill">PostgreSQL</span>
-              <span class="career-pill">E-commerce</span>
-              <span class="career-pill">Clean Architecture</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- 3. Italytec Imex -->
-        <div class="career-cyber-card">
-          <div class="career-meta-box">
-            <span class="career-period-tag">MAI 2021 — JUN 2024 (2A 2M)</span>
-            <h3 class="career-company-name">Italytec Imex Ind. e Com.</h3>
-            <div class="career-role-title">Desenvolvedor Delphi &amp; TI</div>
-            <div class="career-location-text"><i class="fas fa-location-dot"></i> Nova Odessa, SP</div>
-          </div>
-          <div>
-            <p class="career-desc-text">
-              Trajetória de evolução técnica consistente atuando no desenvolvimento e manutenção de sistemas desktop ERP corporativos em <strong>Delphi</strong>, automação de rotinas industriais e comerciais, integração com bancos de dados relacionais <strong>SQL</strong> e suporte de infraestrutura.
-            </p>
-
-            <div class="career-sub-timeline">
-              <div class="career-sub-row">
-                <span class="sub-role-title">Desenvolvedor Delphi</span>
-                <span class="sub-role-period">Mar 2023 — Jun 2024 (1 ano 4 meses)</span>
-              </div>
-              <div class="career-sub-row">
-                <span class="sub-role-title">Assistente de Informática Sênior &amp; Pleno</span>
-                <span class="sub-role-period">Mai 2022 — Mar 2023 (11 meses)</span>
-              </div>
-              <div class="career-sub-row">
-                <span class="sub-role-title">Estagiário de Informática</span>
-                <span class="sub-role-period">Mai 2021 — Set 2021 (5 meses)</span>
-              </div>
-            </div>
-
-            <div class="career-pills-wrap">
-              <span class="career-pill">Delphi</span>
-              <span class="career-pill">SQL</span>
-              <span class="career-pill">Sistemas ERP</span>
-              <span class="career-pill">Infraestrutura</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Education Cards -->
-      <div class="edu-cyber-grid">
-        <div class="edu-cyber-card">
-          <div class="edu-cyber-head">
-            <div class="edu-icon-cyber"><i class="fas fa-graduation-cap"></i></div>
-            <div>
-              <div class="edu-main-title">Centro Universitário Salesiano de São Paulo (UNISAL)</div>
-              <div class="edu-sub-title">Bacharelado em Engenharia de Computação</div>
-            </div>
-          </div>
-          <p class="edu-text-desc">
-            Formação sólida (2020 – 2024) com ênfase em arquitetura de computadores, estruturas de dados avançadas, engenharia de software, redes e sistemas distribuídos.
+    <!-- ==========================================================================
+         SEÇÃO 01: SOLUÇÕES PARA NEGÓCIOS (O QUE POSSO CRIAR PARA VOCÊ)
+         ========================================================================== -->
+    <section class="section" id="solutions">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i class="fas fa-sparkles"></i> Soluções Sob Medida</span>
+          <h2 class="section-title">O que posso criar para a sua empresa</h2>
+          <p class="section-subtitle">
+            Você não precisa entender de programação. Minha missão é traduzir a necessidade do seu negócio em uma ferramenta rápida, bonita e lucrativa.
           </p>
         </div>
 
-        <div class="edu-cyber-card">
-          <div class="edu-cyber-head">
-            <div class="edu-icon-cyber"><i class="fas fa-certificate"></i></div>
+        <div class="solutions-grid">
+
+          <!-- Card 1: Apps Mobile -->
+          <article class="solution-card">
             <div>
-              <div class="edu-main-title">Alura &amp; ETEC Polivalente</div>
-              <div class="edu-sub-title">Especializações &amp; Formação Técnica</div>
+              <div class="solution-top">
+                <div class="solution-icon mobile">
+                  <i class="fas fa-mobile-screen-button"></i>
+                </div>
+                <div class="solution-header">
+                  <h3>Aplicativos Móveis (iOS &amp; Android)</h3>
+                  <span class="solution-badge">Apple App Store &amp; Google Play</span>
+                </div>
+              </div>
+
+              <p class="solution-desc">
+                Crio aplicativos para smartphone rápidos, modernos e elegantes com a tecnologia Flutter. Seus clientes terão sua empresa na palma da mão, com uma experiência ultra-fluida que não trava.
+              </p>
+
+              <ul class="solution-benefits">
+                <li><i class="fas fa-circle-check"></i> <strong>Um aplicativo, duas lojas:</strong> funciona no iPhone e no Android reduzindo custos.</li>
+                <li><i class="fas fa-circle-check"></i> <strong>Recursos nativos:</strong> notificações, mapas, geolocalização, câmera e pagamentos via Pix e cartão.</li>
+                <li><i class="fas fa-circle-check"></i> <strong>Funciona sem internet:</strong> sincroniza automaticamente assim que o usuário reconectar.</li>
+              </ul>
             </div>
-          </div>
-          <p class="edu-text-desc">
-            Certificações avançadas em Dart (Null Safety &amp; Exceptions), Flutter com WebAPI, Orientação a Objetos e base técnica pela Escola Técnica Estadual Polivalente (2017 – 2019).
-          </p>
+
+            <div class="solution-tag-row">
+              <span class="tech-tag"><i class="devicon-flutter-plain"></i> Flutter</span>
+              <span class="tech-tag"><i class="devicon-dart-plain"></i> Dart</span>
+              <span class="tech-tag">Design System</span>
+              <span class="tech-tag">Offline-First</span>
+            </div>
+          </article>
+
+          <!-- Card 2: Lojas Virtuais & Plataformas Web -->
+          <article class="solution-card">
+            <div>
+              <div class="solution-top">
+                <div class="solution-icon web">
+                  <i class="fas fa-globe"></i>
+                </div>
+                <div class="solution-header">
+                  <h3>Sites &amp; Lojas Virtuais de Alta Conversão</h3>
+                  <span class="solution-badge">Foco em Vendas e Credibilidade</span>
+                </div>
+              </div>
+
+              <p class="solution-desc">
+                Desenvolvo e-commerces com personalização de produto em tempo real e portais institucionais que posicionam sua marca como referência no mercado e transformam visitantes em compradores.
+              </p>
+
+              <ul class="solution-benefits">
+                <li><i class="fas fa-circle-check"></i> <strong>Cálculo de frete e checkout na hora:</strong> sem o cliente precisar chamar no WhatsApp para cotar.</li>
+                <li><i class="fas fa-circle-check"></i> <strong>Velocidade relâmpago:</strong> abre instantaneamente em celulares 4G e 5G.</li>
+                <li><i class="fas fa-circle-check"></i> <strong>Pronto para o Google (SEO):</strong> código estruturado para atrair buscas orgânicas gratuitas.</li>
+              </ul>
+
+              <!-- Recorte real do projeto -->
+              <div class="solution-preview-snippet">
+                <img src="assets/img/projects/fixafacil-full.png" alt="Exemplo real de e-commerce: fixafacilnumeros.com" loading="lazy">
+                <span class="solution-preview-badge">
+                  <i class="fas fa-check-circle" style="color: #10b981;"></i> Exemplo real: fixafacilnumeros.com
+                </span>
+              </div>
+            </div>
+
+            <div class="solution-tag-row">
+              <span class="tech-tag">E-Commerce</span>
+              <span class="tech-tag">Cálculo de Frete</span>
+              <span class="tech-tag">Checkout Otimizado</span>
+              <span class="tech-tag">SEO &amp; Performance</span>
+            </div>
+          </article>
+
+          <!-- Card 3: Automação & Sistemas Internos -->
+          <article class="solution-card">
+            <div>
+              <div class="solution-top">
+                <div class="solution-icon automation">
+                  <i class="fas fa-gears"></i>
+                </div>
+                <div class="solution-header">
+                  <h3>Sistemas de Gestão &amp; Automação</h3>
+                  <span class="solution-badge">Adeus planilhas confusas e retrabalho</span>
+                </div>
+              </div>
+
+              <p class="solution-desc">
+                Automatizo processos repetitivos e centralizo os dados da sua empresa em painéis claros. Chega de passar horas cruzando planilhas do Excel para conferir extratos ou fechar relatórios.
+              </p>
+
+              <ul class="solution-benefits">
+                <li><i class="fas fa-circle-check"></i> <strong>Conciliação bancária automática:</strong> lê arquivos .OFX e .XLSX bancários em segundos.</li>
+                <li><i class="fas fa-circle-check"></i> <strong>Relatórios com um clique:</strong> exportação contábil pronta para contadores e diretoria.</li>
+                <li><i class="fas fa-circle-check"></i> <strong>Controle de acessos seguro:</strong> permissões personalizadas para cada colaborador.</li>
+              </ul>
+            </div>
+
+            <div class="solution-tag-row">
+              <span class="tech-tag"><i class="devicon-python-plain"></i> Python</span>
+              <span class="tech-tag"><i class="devicon-django-plain"></i> Django REST</span>
+              <span class="tech-tag"><i class="devicon-postgresql-plain"></i> PostgreSQL</span>
+              <span class="tech-tag">Automação Contábil</span>
+            </div>
+          </article>
+
+          <!-- Card 4: Nuvem & IA -->
+          <article class="solution-card">
+            <div>
+              <div class="solution-top">
+                <div class="solution-icon ai">
+                  <i class="fas fa-wand-magic-sparkles"></i>
+                </div>
+                <div class="solution-header">
+                  <h3>Nuvem Blindada &amp; Inteligência Artificial</h3>
+                  <span class="solution-badge">Segurança, escala e tecnologia de ponta</span>
+                </div>
+              </div>
+
+              <p class="solution-desc">
+                Garanto que seu sistema nunca saia do ar com servidores em nuvem modernos (Kubernetes e Docker), além de integrar recursos de IA e busca avançada para potencializar seus serviços.
+              </p>
+
+              <ul class="solution-benefits">
+                <li><i class="fas fa-circle-check"></i> <strong>Busca inteligente e veloz:</strong> pesquisa textual estilo Google em milhões de registros com Elasticsearch.</li>
+                <li><i class="fas fa-circle-check"></i> <strong>Automações com IA (LLMs):</strong> leitura e resumo de contratos, atendimento inteligente e classificação de dados.</li>
+                <li><i class="fas fa-circle-check"></i> <strong>Zero lentidão:</strong> infraestrutura em nuvem que cresce automaticamente conforme o número de acessos.</li>
+              </ul>
+            </div>
+
+            <div class="solution-tag-row">
+              <span class="tech-tag"><i class="devicon-kubernetes-plain"></i> Kubernetes</span>
+              <span class="tech-tag"><i class="devicon-docker-plain"></i> Docker</span>
+              <span class="tech-tag"><i class="devicon-elasticsearch-plain"></i> Elasticsearch</span>
+              <span class="tech-tag">IA / LLMs</span>
+            </div>
+          </article>
+
         </div>
       </div>
+    </section>
 
-    </div>
-  </section>
-
-  <!-- ==========================================================================
-       CONTATO DIRETO
-       ========================================================================== -->
-  <section class="cyber-section" id="contact">
-    <div class="container">
-      <div class="contact-cyber-card">
-        <div class="contact-lead-cyber">
-          <span class="section-caption-cyber">&lt;Contato Direto /&gt;</span>
-          <h3>Vamos construir seu próximo projeto?</h3>
-          <p>
-            Estou disponível para desenvolvimento de sistemas web, aplicativos móveis (iOS &amp; Android), APIs back-end, orquestração Kubernetes ou oportunidades como Desenvolvedor Full Stack.
+    <!-- ==========================================================================
+         SEÇÃO 02: PROJETOS EM PRODUÇÃO (SHOWCASE VISUAL COM MOCKUPS REAIS)
+         ========================================================================== -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i class="fas fa-box-archive"></i> Trabalhos Selecionados</span>
+          <h2 class="section-title">Projetos que faço e resultados gerados</h2>
+          <p class="section-subtitle">
+            Veja na prática como as ideias foram transformadas em produtos digitais funcionais, atraentes e em operação comercial.
           </p>
         </div>
 
-        <div class="contact-direct-stack">
-          <!-- WhatsApp -->
-          <div class="contact-direct-row">
-            <div>
-              <div class="direct-label-small">WhatsApp Direto</div>
-              <div class="direct-value-bold">+55 (19) 98429-1707</div>
+        <div class="projects-showcase">
+
+          <!-- PROJETO 1: Fixa Fácil Números -->
+          <article class="project-showcase-card">
+            <div class="project-preview-wrapper">
+              <div class="browser-mockup">
+                <div class="browser-header">
+                  <div class="browser-dots">
+                    <span class="browser-dot red"></span>
+                    <span class="browser-dot yellow"></span>
+                    <span class="browser-dot green"></span>
+                  </div>
+                  <div class="browser-address">
+                    <i class="fas fa-lock" style="font-size: 0.65rem;"></i>
+                    <span>fixafacilnumeros.com</span>
+                  </div>
+                </div>
+
+                <div class="browser-body-real">
+                  <img src="assets/img/projects/fixafacil-full.png" alt="Print oficial da loja virtual Fixa Fácil Números" class="browser-real-img" loading="lazy">
+                  <span class="browser-floating-tag">
+                    <span class="tag-dot"></span> fixafacilnumeros.com no ar
+                  </span>
+                </div>
+              </div>
+
+              <!-- Recortes reais adicionais do e-commerce -->
+              <div class="project-sub-strip">
+                <div class="project-sub-thumb">
+                  <img src="assets/img/projects/fixafacil-models.png" alt="Modelos de numerais e linhas de produto" loading="lazy">
+                  <span class="project-sub-label"><i class="fas fa-cube"></i> Linhas de Produto</span>
+                </div>
+                <div class="project-sub-thumb">
+                  <img src="assets/img/projects/fixafacil-banner.png" alt="Identificação residencial e cálculo de frete" loading="lazy">
+                  <span class="project-sub-label"><i class="fas fa-truck-fast"></i> Frete &amp; Checkout</span>
+                </div>
+              </div>
             </div>
-            <div style="display: flex; gap: 0.4rem;">
-              <button class="btn-contact-tool" onclick="copyToClipboard('19984291707', 'WhatsApp')">
-                <i class="far fa-copy"></i> Copiar
-              </button>
-              <a href="https://wa.me/5519984291707" target="_blank" rel="noopener noreferrer" class="btn-contact-tool" style="color: #25d366;">
-                <i class="fab fa-whatsapp"></i> Conversar
-              </a>
+
+            <div class="project-content">
+              <span class="project-tag-pill">
+                <i class="fas fa-cart-shopping"></i> E-Commerce Especializado · Em Produção
+              </span>
+
+              <h3 class="project-title">Fixa Fácil Números</h3>
+
+              <div class="project-problem-solution">
+                <span class="project-block-title">O Desafio do Negócio:</span>
+                <p class="project-desc">
+                  O cliente recebia dezenas de mensagens no WhatsApp todos os dias de pessoas pedindo fotos de numerais para fachadas e cotação de frete, o que gerava um gargalo imenso no atendimento manual.
+                </p>
+
+                <span class="project-block-title">A Solução Desenvolvida:</span>
+                <p class="project-desc">
+                  Criei uma loja virtual sob medida com <strong>simulador interativo</strong>: o cliente digita o número da casa, escolhe a tipografia e o acabamento em tempo real, e a plataforma calcula o frete automaticamente pelos Correios/transportadoras no checkout.
+                </p>
+              </div>
+
+              <ul class="project-results-list">
+                <li><i class="fas fa-circle-check"></i> <strong>Vendas 100% autônomas:</strong> o cliente personaliza, calcula o frete e paga sem precisar de intervenção manual.</li>
+                <li><i class="fas fa-circle-check"></i> <strong>Zero devoluções por erro:</strong> o comprador visualiza exatamente o que vai receber antes de fechar a compra.</li>
+              </ul>
+
+              <div class="project-action-row">
+                <a href="https://fixafacilnumeros.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                  <span>Acessar fixafacilnumeros.com</span>
+                  <i class="fas fa-arrow-up-right-from-square" style="font-size: 0.72rem;"></i>
+                </a>
+
+                <a href="https://wa.me/5519984291707?text=Ol%C3%A1%20Gabriel!%20Gostei%20do%20projeto%20Fixa%20F%C3%A1cil%20N%C3%BAmeros%20e%20quero%20um%20e-commerce/configurador%20semelhante." target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+                  <i class="fab fa-whatsapp"></i> Quero um e-commerce assim
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJETO 2: Ventura Arquitetura -->
+          <article class="project-showcase-card reverse">
+            <div class="project-preview-wrapper">
+              <div class="browser-mockup">
+                <div class="browser-header">
+                  <div class="browser-dots">
+                    <span class="browser-dot red"></span>
+                    <span class="browser-dot yellow"></span>
+                    <span class="browser-dot green"></span>
+                  </div>
+                  <div class="browser-address">
+                    <i class="fas fa-lock" style="font-size: 0.65rem;"></i>
+                    <span>venturaarquitetura.com.br</span>
+                  </div>
+                </div>
+
+                <div class="browser-body-real">
+                  <img src="assets/img/projects/ventura-gallery.png" alt="Print oficial da galeria de projetos e obras da Ventura Arquitetura" class="browser-real-img" loading="lazy">
+                  <span class="browser-floating-tag">
+                    <span class="tag-dot"></span> venturaarquitetura.com.br no ar
+                  </span>
+                </div>
+              </div>
+
+              <!-- Recortes reais adicionais do portal -->
+              <div class="project-sub-strip">
+                <div class="project-sub-thumb">
+                  <img src="assets/img/projects/ventura-about.png" alt="Identidade da marca e arquiteta Caroline Ventura" loading="lazy">
+                  <span class="project-sub-label"><i class="fas fa-gem"></i> Posicionamento de Marca</span>
+                </div>
+                <div class="project-sub-thumb">
+                  <img src="assets/img/projects/ventura-full.png" alt="Projetos residenciais contemporâneos" loading="lazy">
+                  <span class="project-sub-label"><i class="fas fa-camera"></i> Vitrine Editorial</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-content">
+              <span class="project-tag-pill">
+                <i class="fas fa-building"></i> Presença Digital Editorial · Em Produção
+              </span>
+
+              <h3 class="project-title">Ventura Arquitetura + Interiores</h3>
+
+              <div class="project-problem-solution">
+                <span class="project-block-title">O Desafio do Negócio:</span>
+                <p class="project-desc">
+                  Um escritório de arquitetura de alto padrão precisava de uma vitrine digital sofisticada e minimalista que transmitisse luxo e elegância, com fotos em altíssima definição sem deixar o site pesado ou lento no celular.
+                </p>
+
+                <span class="project-block-title">A Solução Desenvolvida:</span>
+                <p class="project-desc">
+                  Desenvolvi uma plataforma web com design editorial moderno, otimização sob medida para entrega de mídia em alta resolução (WebP inteligente) e adaptação fluida para qualquer tamanho de tela, do iPhone ao monitor ultrawide.
+                </p>
+              </div>
+
+              <ul class="project-results-list">
+                <li><i class="fas fa-circle-check"></i> <strong>Carregamento abaixo de 1 segundo:</strong> fotos nítidas sem lentidão na experiência.</li>
+                <li><i class="fas fa-circle-check"></i> <strong>Posicionamento premium:</strong> captação direta de clientes de alto padrão para reformas e projetos arquitetônicos.</li>
+              </ul>
+
+              <div class="project-action-row">
+                <a href="https://venturaarquitetura.com.br" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                  <span>Acessar venturaarquitetura.com.br</span>
+                  <i class="fas fa-arrow-up-right-from-square" style="font-size: 0.72rem;"></i>
+                </a>
+
+                <a href="https://wa.me/5519984291707?text=Ol%C3%A1%20Gabriel!%20Vi%20o%20site%20da%20Ventura%20Arquitetura%20e%20quero%20um%20portal%20com%20esse%20design%20de%20alto%20padr%C3%A3o." target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+                  <i class="fab fa-whatsapp"></i> Quero um site premium
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJETO 3: Sistema de Tesouraria IPA -->
+          <article class="project-showcase-card">
+            <div class="project-preview-wrapper">
+              <div class="browser-mockup">
+                <div class="browser-header">
+                  <div class="browser-dots">
+                    <span class="browser-dot red"></span>
+                    <span class="browser-dot yellow"></span>
+                    <span class="browser-dot green"></span>
+                  </div>
+                  <div class="browser-address">
+                    <i class="fas fa-shield-halved" style="font-size: 0.65rem;"></i>
+                    <span>tesouraria.institucional / dashboard</span>
+                  </div>
+                </div>
+
+                <div class="browser-body">
+                  <div class="treasury-preview-canvas">
+                    <div class="treasury-stat-row">
+                      <div class="treasury-card">
+                        <span class="treasury-card-label">Extratos do Mês</span>
+                        <div class="treasury-card-val">R$ 184.250</div>
+                        <span class="treasury-badge-ok"><i class="fas fa-check-circle"></i> 99.4% Conciliado</span>
+                      </div>
+                      <div class="treasury-card">
+                        <span class="treasury-card-label">Tempo Economizado</span>
+                        <div class="treasury-card-val">+20 Horas</div>
+                        <span style="font-size: 0.72rem; color: var(--primary-light);">Zero erros manuais</span>
+                      </div>
+                    </div>
+
+                    <div class="treasury-table-preview">
+                      <div class="treasury-row" style="font-weight: 700; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.2rem;">
+                        <span>Lançamento (.OFX)</span>
+                        <span>Status</span>
+                        <span>Valor</span>
+                      </div>
+                      <div class="treasury-row">
+                        <span>TED Fornecedor TI</span>
+                        <span style="color: #10b981;">Conciliado</span>
+                        <span>- R$ 3.420,00</span>
+                      </div>
+                      <div class="treasury-row">
+                        <span>Recebimento Mensalidade</span>
+                        <span style="color: #10b981;">Conciliado</span>
+                        <span>+ R$ 12.800,00</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-content">
+              <span class="project-tag-pill">
+                <i class="fas fa-file-invoice-dollar"></i> Automação Financeira &amp; ERP · Em Produção
+              </span>
+
+              <h3 class="project-title">Sistema de Tesouraria IPA</h3>
+
+              <div class="project-problem-solution">
+                <span class="project-block-title">O Desafio do Negócio:</span>
+                <p class="project-desc">
+                  A equipe financeira perdia dias inteiros no final de cada mês conferindo extratos bancários manualmente em planilhas que frequentemente continham erros de digitação e desencontros contábeis.
+                </p>
+
+                <span class="project-block-title">A Solução Desenvolvida:</span>
+                <p class="project-desc">
+                  Desenvolvi um sistema web em Python &amp; Django REST com banco de dados PostgreSQL seguro, capaz de processar arquivos bancários <strong>.OFX</strong> e planilhas <strong>.XLSX</strong> instantaneamente, fazendo a conciliação automática com as despesas e receitas cadastradas.
+                </p>
+              </div>
+
+              <ul class="project-results-list">
+                <li><i class="fas fa-circle-check"></i> <strong>Economia de mais de 20 horas mensais:</strong> o que levava 3 dias de trabalho manual agora roda em menos de 1 minuto.</li>
+                <li><i class="fas fa-circle-check"></i> <strong>Auditoria blindada:</strong> rastreabilidade total de cada centavo para prestações de contas sem estresse.</li>
+              </ul>
+
+              <div class="project-action-row">
+                <a href="https://wa.me/5519984291707?text=Ol%C3%A1%20Gabriel!%20Gostaria%20de%20agendar%20uma%20demonstra%C3%A7%C3%A3o%20do%20Sistema%20de%20Tesouraria." target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                  <i class="fas fa-desktop"></i>
+                  <span>Solicitar demonstração ao vivo</span>
+                </a>
+
+                <a href="https://wa.me/5519984291707?text=Ol%C3%A1%20Gabriel!%20Preciso%20automatizar%20processos%20financeiros%20ou%20planilhas%20na%20minha%20empresa." target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+                  <i class="fab fa-whatsapp"></i> Automatizar minha empresa
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJETO 4: Finance App Mobile -->
+          <article class="project-showcase-card reverse">
+            <div class="project-preview-wrapper" style="background: transparent; border: none; box-shadow: none;">
+              <div class="phone-mockup-wrapper">
+                <div class="phone-mockup">
+                  <div class="phone-screen">
+                    <div class="phone-notch"></div>
+                    
+                    <span class="phone-balance-label">Saldo Disponível</span>
+                    <div class="phone-balance-val">R$ 14.850,20</div>
+
+                    <div class="phone-card-widget">
+                      <div class="phone-card-top">
+                        <span>CONTA DIGITAL</span>
+                        <i class="fab fa-cc-mastercard"></i>
+                      </div>
+                      <div class="phone-card-num">•••• 8824</div>
+                      <div style="font-size: 0.65rem; opacity: 0.85;">Gabriel Marques</div>
+                    </div>
+
+                    <div style="font-size: 0.68rem; font-weight: 700; text-transform: uppercase; color: #94a3b8; margin-top: 0.2rem;">
+                      Gastos por Categoria
+                    </div>
+
+                    <div class="phone-bars">
+                      <div class="phone-bar" style="height: 40%;"></div>
+                      <div class="phone-bar active" style="height: 85%;"></div>
+                      <div class="phone-bar" style="height: 55%;"></div>
+                      <div class="phone-bar" style="height: 70%;"></div>
+                      <div class="phone-bar" style="height: 35%;"></div>
+                    </div>
+
+                    <div class="phone-tx-list">
+                      <div class="phone-tx-item">
+                        <span><i class="fas fa-shopping-bag" style="color: #6366f1;"></i> Supermercado</span>
+                        <span style="font-weight: 700;">- R$ 342,00</span>
+                      </div>
+                      <div class="phone-tx-item">
+                        <span><i class="fas fa-arrow-down" style="color: #10b981;"></i> Rendimento Pix</span>
+                        <span style="font-weight: 700; color: #10b981;">+ R$ 850,00</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-content">
+              <span class="project-tag-pill">
+                <i class="fas fa-mobile-screen"></i> Aplicativo Nativo iOS &amp; Android
+              </span>
+
+              <h3 class="project-title">Finance App Mobile</h3>
+
+              <div class="project-problem-solution">
+                <span class="project-block-title">O Desafio do Negócio:</span>
+                <p class="project-desc">
+                  A maioria dos aplicativos de controle financeiro é lenta, cheia de anúncios invasivos ou depende 100% de sinal de celular constante, o que afasta os usuários diários.
+                </p>
+
+                <span class="project-block-title">A Solução Desenvolvida:</span>
+                <p class="project-desc">
+                  Projetei e programei um aplicativo em Flutter com foco absoluto na experiência do usuário: telas ultra-fluidas a 120fps, gráficos intuitivos de despesas, categorização inteligente e sincronização transparente para funcionar perfeitamente mesmo sem internet.
+                </p>
+              </div>
+
+              <ul class="project-results-list">
+                <li><i class="fas fa-circle-check"></i> <strong>Experiência nível Nubank/Inter:</strong> visual moderno e sensação tátil instantânea no toque.</li>
+                <li><i class="fas fa-circle-check"></i> <strong>Segurança e privacidade:</strong> dados criptografados e suporte nativo a biometria/FaceID.</li>
+              </ul>
+
+              <div class="project-action-row">
+                <a href="https://wa.me/5519984291707?text=Ol%C3%A1%20Gabriel!%20Quero%20conhecer%20mais%20sobre%20o%20Finance%20App%20e%20aplicativos%20em%20Flutter." target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                  <i class="fab fa-whatsapp"></i>
+                  <span>Conversar sobre este aplicativo</span>
+                </a>
+
+                <a href="https://wa.me/5519984291707?text=Ol%C3%A1%20Gabriel!%20Tenho%20uma%20ideia%20de%20aplicativo%20para%20celular%20e%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+                  <i class="fas fa-rocket"></i> Criar meu aplicativo
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SEÇÃO 03: COMO CONSIGO REALIZAR ISSO / O MÉTODO DO ZERO AO LANÇAMENTO
+         ========================================================================== -->
+    <section class="section" id="process">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i class="fas fa-route"></i> Passo a Passo Transparente</span>
+          <h2 class="section-title">Como consigo realizar isso na prática</h2>
+          <p class="section-subtitle">
+            Um processo claro, sem termos técnicos complicados e com entregas contínuas para você acompanhar a evolução do seu projeto semana a semana.
+          </p>
+        </div>
+
+        <div class="process-grid">
+
+          <!-- Passo 1 -->
+          <div class="process-step-card">
+            <span class="process-step-num">01</span>
+            <h3 class="process-step-title">Descoberta &amp; Diagnóstico</h3>
+            <p class="process-step-desc">
+              Conversamos para entender a sua ideia, quem são seus clientes e quais os problemas a resolver. Definimos o plano ideal para lançar rápido e sem gastar com coisas desnecessárias.
+            </p>
+          </div>
+
+          <!-- Passo 2 -->
+          <div class="process-step-card">
+            <span class="process-step-num">02</span>
+            <h3 class="process-step-title">Design das Telas (UI/UX)</h3>
+            <p class="process-step-desc">
+              Desenho o protótipo visual das telas. Você vê e aprova exatamente como seu app ou site vai ficar antes de começarmos a programar, garantindo um visual incrível e fácil de usar.
+            </p>
+            <div class="process-step-preview">
+              <img src="assets/img/projects/ventura-gallery.png" alt="Exemplo de design editorial refinado" loading="lazy">
             </div>
           </div>
 
-          <!-- Email -->
-          <div class="contact-direct-row">
-            <div>
-              <div class="direct-label-small">E-mail Profissional</div>
-              <div class="direct-value-bold">gabriel@gmdevwoks.com.br</div>
-            </div>
-            <div style="display: flex; gap: 0.4rem;">
-              <button class="btn-contact-tool" onclick="copyToClipboard('gabriel@gmdevwoks.com.br', 'E-mail')">
-                <i class="far fa-copy"></i> Copiar
-              </button>
-              <a href="mailto:gabriel@gmdevwoks.com.br" class="btn-contact-tool">
-                <i class="far fa-envelope"></i> Enviar
-              </a>
+          <!-- Passo 3 -->
+          <div class="process-step-card">
+            <span class="process-step-num">03</span>
+            <h3 class="process-step-title">Engenharia &amp; Construção</h3>
+            <p class="process-step-desc">
+              Programação de ponta a ponta com Flutter e Python. Código limpo, banco de dados seguro e integração de pagamentos e APIs para o sistema aguentar milhares de acessos sem travar.
+            </p>
+          </div>
+
+          <!-- Passo 4 -->
+          <div class="process-step-card">
+            <span class="process-step-num">04</span>
+            <h3 class="process-step-title">Publicação &amp; Lançamento</h3>
+            <p class="process-step-desc">
+              Cuido de toda a burocracia técnica: publicação nas lojas Apple App Store e Google Play, configuração de servidores na nuvem (Kubernetes/Docker), domínios e certificados de segurança.
+            </p>
+            <div class="process-step-preview">
+              <img src="assets/img/projects/fixafacil-full.png" alt="Lançamento e e-commerce ativo em produção" loading="lazy">
             </div>
           </div>
 
-          <!-- LinkedIn -->
-          <div class="contact-direct-row">
-            <div>
-              <div class="direct-label-small">LinkedIn</div>
-              <div class="direct-value-bold">gabriel-campos-marques</div>
+          <!-- Passo 5 -->
+          <div class="process-step-card">
+            <span class="process-step-num">05</span>
+            <h3 class="process-step-title">Suporte &amp; Crescimento</h3>
+            <p class="process-step-desc">
+              Acompanho as métricas de uso e fico disponível para suporte e novas funcionalidades conforme o seu negócio for crescendo e demandando novidades.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Banner de Confiança -->
+        <div class="trust-banner">
+          <div class="trust-banner-copy">
+            <span class="section-tag" style="background: rgba(255,255,255,0.1); color: var(--text-primary); border-color: rgba(255,255,255,0.2);">
+              Diferenciais GM DevWorks
+            </span>
+            <h3>Por que trabalhar comigo é seguro e descomplicado?</h3>
+            <p>
+              Ao me contratar, você fala diretamente com o engenheiro que projeta, programa e coloca seu sistema no ar. Sem intermediários, sem atrasos desnecessários e com total clareza.
+            </p>
+          </div>
+
+          <div class="trust-items-grid">
+            <div class="trust-item">
+              <div class="trust-item-icon"><i class="fas fa-comments"></i></div>
+              <div class="trust-item-text">
+                <h4>Comunicação Direta</h4>
+                <p>Explicações claras em português simples, sem jargões para você sempre saber o que está acontecendo.</p>
+              </div>
             </div>
-            <div>
-              <a href="https://www.linkedin.com/in/gabriel-campos-marques-5597b319b" target="_blank" rel="noopener noreferrer" class="btn-contact-tool">
-                <i class="fab fa-linkedin"></i> Ver Perfil
-              </a>
+
+            <div class="trust-item">
+              <div class="trust-item-icon"><i class="fas fa-cube"></i></div>
+              <div class="trust-item-text">
+                <h4>Visão 360° (Full Stack)</h4>
+                <p>Você não precisa contratar 4 profissionais diferentes. Cuido do visual, do código e dos servidores.</p>
+              </div>
+            </div>
+
+            <div class="trust-item">
+              <div class="trust-item-icon"><i class="fas fa-clock-rotate-left"></i></div>
+              <div class="trust-item-text">
+                <h4>Entregas Contínuas</h4>
+                <p>Você testa e aprova versões funcionais a cada semana, acompanhando o projeto nascer em tempo real.</p>
+              </div>
+            </div>
+
+            <div class="trust-item">
+              <div class="trust-item-icon"><i class="fas fa-key"></i></div>
+              <div class="trust-item-text">
+                <h4>Propriedade Total</h4>
+                <p>Todo o código, contas das lojas e servidores ficam no seu nome. Você é o dono absoluto do seu produto.</p>
+              </div>
             </div>
           </div>
         </div>
+
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- ==========================================================================
+         SEÇÃO 04: ARQUITETURA & TECNOLOGIAS (BENTO GRID MODERNO)
+         ========================================================================== -->
+    <section class="section" id="architecture">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i class="fas fa-microchip"></i> Rigor Técnico &amp; Stack</span>
+          <h2 class="section-title">Tecnologias que garantem estabilidade</h2>
+          <p class="section-subtitle">
+            Para clientes e parceiros técnicos: conheça a base tecnológica que utilizo para manter sistemas rápidos, seguros e escaláveis.
+          </p>
+        </div>
+
+        <div class="bento-grid">
+          <!-- Mobile -->
+          <div class="surface-card bento-card bento-col-7">
+            <div>
+              <div class="bento-head">
+                <div class="bento-icon"><i class="devicon-flutter-plain"></i></div>
+                <span class="bento-label">Client-Side &amp; Mobile</span>
+              </div>
+              <h3 class="bento-title">Engenharia Mobile com Flutter &amp; Dart</h3>
+              <p class="bento-desc">
+                Criação de aplicativos para iOS e Android com renderização nativa a 60/120fps. Arquitetura MVVM, injeção de dependências e tratamento funcional de falhas para garantir que o aplicativo nunca feche sozinho na mão do seu cliente.
+              </p>
+            </div>
+            <div class="tag-list">
+              <span class="tech-tag">Flutter</span>
+              <span class="tech-tag">Dart</span>
+              <span class="tech-tag">MVVM</span>
+              <span class="tech-tag">Design System</span>
+              <span class="tech-tag">App Store &amp; Google Play</span>
+            </div>
+          </div>
+
+          <!-- Backend -->
+          <div class="surface-card bento-card bento-col-5">
+            <div>
+              <div class="bento-head">
+                <div class="bento-icon"><i class="devicon-python-plain"></i></div>
+                <span class="bento-label">Server-Side &amp; APIs</span>
+              </div>
+              <h3 class="bento-title">Python &amp; Django REST Framework</h3>
+              <p class="bento-desc">
+                Construção de APIs e regras de negócio robustas, autenticação criptografada com JWT, segurança contra vazamentos de dados e alta velocidade de resposta.
+              </p>
+            </div>
+            <div class="tag-list">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Django REST</span>
+              <span class="tech-tag">JWT</span>
+              <span class="tech-tag">Clean Architecture</span>
+            </div>
+          </div>
+
+          <!-- DevOps & K8s -->
+          <div class="surface-card bento-card bento-col-6">
+            <div>
+              <div class="bento-head">
+                <div class="bento-icon"><i class="devicon-kubernetes-plain"></i></div>
+                <span class="bento-label">Infraestrutura em Nuvem</span>
+              </div>
+              <h3 class="bento-title">Kubernetes, Docker &amp; CI/CD</h3>
+              <p class="bento-desc">
+                Ambientes padronizados que nunca deixam o sistema fora do ar. Deploy automatizado, isolamento em containers e escalabilidade automática para picos de acessos.
+              </p>
+            </div>
+            <div class="tag-list">
+              <span class="tech-tag">Kubernetes</span>
+              <span class="tech-tag">Docker</span>
+              <span class="tech-tag">Nginx</span>
+              <span class="tech-tag">Linux</span>
+              <span class="tech-tag">Git / CI/CD</span>
+            </div>
+          </div>
+
+          <!-- Dados, Busca e IA -->
+          <div class="surface-card bento-card bento-col-6">
+            <div>
+              <div class="bento-head">
+                <div class="bento-icon"><i class="devicon-postgresql-plain"></i></div>
+                <span class="bento-label">Dados, Busca &amp; IA</span>
+              </div>
+              <h3 class="bento-title">PostgreSQL, Elasticsearch &amp; IA Aplicada</h3>
+              <p class="bento-desc">
+                Modelagem de bancos de dados relacionais confiáveis, buscas instantâneas com Elasticsearch e integração com Modelos de Linguagem (ChatGPT/Claude/Gemini) para automação de tarefas.
+              </p>
+            </div>
+            <div class="tag-list">
+              <span class="tech-tag">PostgreSQL</span>
+              <span class="tech-tag">Elasticsearch</span>
+              <span class="tech-tag">IA Generativa</span>
+              <span class="tech-tag">Delphi / SQL</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Faixa de Tecnologias -->
+        <div class="surface-card stack-strip">
+          <span class="stack-strip-label">Ecossistema Dominado</span>
+          <div class="stack-icons-row">
+            <span class="stack-item"><i class="devicon-flutter-plain"></i> Flutter</span>
+            <span class="stack-item"><i class="devicon-dart-plain"></i> Dart</span>
+            <span class="stack-item"><i class="devicon-python-plain"></i> Python</span>
+            <span class="stack-item"><i class="devicon-django-plain"></i> Django</span>
+            <span class="stack-item"><i class="devicon-postgresql-plain"></i> PostgreSQL</span>
+            <span class="stack-item"><i class="devicon-elasticsearch-plain"></i> Elasticsearch</span>
+            <span class="stack-item"><i class="devicon-kubernetes-plain"></i> Kubernetes</span>
+            <span class="stack-item"><i class="devicon-docker-plain"></i> Docker</span>
+            <span class="stack-item"><i class="devicon-linux-plain"></i> Linux</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SEÇÃO 05: TRAJETÓRIA PROFISSIONAL & FORMAÇÃO
+         ========================================================================== -->
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i class="fas fa-briefcase"></i> Carreira &amp; Educação</span>
+          <h2 class="section-title">Trajetória e experiência prática</h2>
+          <p class="section-subtitle">
+            Uma caminhada consistente construindo sistemas reais para indústrias, empresas de tecnologia e clientes comerciais.
+          </p>
+        </div>
+
+        <div class="timeline-list">
+
+          <!-- R7ST -->
+          <article class="timeline-item">
+            <div class="timeline-meta">
+              <span class="timeline-period">JUN 2024 — PRESENTE</span>
+              <span class="timeline-location">Santa Bárbara d'Oeste, SP</span>
+            </div>
+            <div class="timeline-content">
+              <h3 class="timeline-role">Desenvolvedor Full Stack · <span class="timeline-company">R7ST</span></h3>
+              <p class="timeline-desc">
+                Desenvolvimento de sistemas web e aplicativos móveis multiplataforma de alta demanda utilizando <strong>Flutter</strong> e <strong>Django REST Framework</strong>. Atuação direta na orquestração de containers com <strong>Docker &amp; Kubernetes</strong>, buscas textuais avançadas com <strong>Elasticsearch</strong> e automações com <strong>Inteligência Artificial</strong>.
+              </p>
+              <div class="tag-list">
+                <span class="tech-tag">Flutter</span>
+                <span class="tech-tag">Python / Django</span>
+                <span class="tech-tag">Kubernetes</span>
+                <span class="tech-tag">Elasticsearch</span>
+                <span class="tech-tag">IA</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- GM DevWorks -->
+          <article class="timeline-item">
+            <div class="timeline-meta">
+              <span class="timeline-period">2024 — PRESENTE</span>
+              <span class="timeline-location">Sumaré, SP · Remoto</span>
+            </div>
+            <div class="timeline-content">
+              <h3 class="timeline-role">Fundador &amp; Lead Engineer · <span class="timeline-company">GM DevWorks</span></h3>
+              <p class="timeline-desc">
+                Criação e entrega ponta a ponta de soluções comerciais em produção, incluindo o e-commerce <strong>Fixa Fácil Números</strong>, o portal de alto padrão <strong>Ventura Arquitetura</strong> e a automação contábil do <strong>Sistema de Tesouraria IPA</strong>.
+              </p>
+
+              <!-- Miniaturas visuais reais dos projetos entregues -->
+              <div class="timeline-proof-gallery">
+                <div class="proof-card">
+                  <img src="assets/img/projects/fixafacil-full.png" alt="Fixa Fácil Números" loading="lazy">
+                  <span class="proof-card-label">Fixa Fácil E-Commerce</span>
+                </div>
+                <div class="proof-card">
+                  <img src="assets/img/projects/ventura-gallery.png" alt="Ventura Arquitetura" loading="lazy">
+                  <span class="proof-card-label">Ventura Arquitetura</span>
+                </div>
+                <div class="proof-card">
+                  <img src="assets/img/projects/ventura-about.png" alt="Posicionamento de Marca Ventura" loading="lazy">
+                  <span class="proof-card-label">Identidade Editorial</span>
+                </div>
+              </div>
+
+              <div class="tag-list">
+                <span class="tech-tag">Desenvolvimento de Produtos</span>
+                <span class="tech-tag">Flutter Mobile</span>
+                <span class="tech-tag">Django REST</span>
+                <span class="tech-tag">E-Commerce</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Italytec Imex -->
+          <article class="timeline-item">
+            <div class="timeline-meta">
+              <span class="timeline-period">MAI 2021 — JUN 2024 (3+ ANOS)</span>
+              <span class="timeline-location">Nova Odessa, SP</span>
+            </div>
+            <div class="timeline-content">
+              <h3 class="timeline-role">Desenvolvedor Delphi &amp; TI · <span class="timeline-company">Italytec Imex Ind. e Com.</span></h3>
+              <p class="timeline-desc">
+                Trajetória de mais de 3 anos atuando no desenvolvimento e manutenção de sistemas ERP industriais em <strong>Delphi</strong>, modelagem e otimização de consultas <strong>SQL</strong> em bancos de dados corporativos e sustentação de redes e servidores da fábrica.
+              </p>
+              <div class="tag-list">
+                <span class="tech-tag">Delphi</span>
+                <span class="tech-tag">SQL &amp; Otimização</span>
+                <span class="tech-tag">ERP Industrial</span>
+                <span class="tech-tag">Infraestrutura TI</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Formação Acadêmica -->
+        <div class="education-grid">
+          <div class="surface-card edu-card">
+            <span class="edu-period">2020 — 2024</span>
+            <h4 class="edu-degree">Bacharelado em Engenharia de Computação</h4>
+            <span class="edu-school">Centro Universitário Salesiano de São Paulo (UNISAL)</span>
+            <p class="edu-details">
+              Formação superior com ênfase em engenharia de software, sistemas distribuídos, redes, arquitetura de sistemas e inteligência computacional.
+            </p>
+          </div>
+
+          <div class="surface-card edu-card">
+            <span class="edu-period">2017 — 2024</span>
+            <h4 class="edu-degree">Especializações Técnicas &amp; Certificações</h4>
+            <span class="edu-school">Alura &amp; ETEC Polivalente de Americana</span>
+            <p class="edu-details">
+              Formações contínuas e avançadas em Flutter com consumo de APIs, Dart com Null Safety, Orientação a Objetos, Python e formação técnica profissionalizante.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SEÇÃO 06: SOBRE & FILOSOFIA DE TRABALHO
+         ========================================================================== -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i class="fas fa-user"></i> Sobre Mim</span>
+          <h2 class="section-title">Compromisso com o seu resultado</h2>
+        </div>
+
+        <div class="about-layout">
+          <div class="about-narrative">
+            <p>
+              Meu nome é <strong>Gabriel Campos Marques</strong>, sou Engenheiro de Computação e apaixonado por construir tecnologia útil. Meu objetivo com a programação nunca foi apenas "escrever código", mas sim ver clientes economizando tempo, negócios aumentando faturamento e usuários se encantando com telas rápidas e intuitivas.
+            </p>
+            <p>
+              Seja criando um aplicativo do zero em <strong>Flutter</strong>, integrando uma loja virtual ou estruturando automações na nuvem, encaro cada projeto como um sócio: cuidando do orçamento, dos prazos e garantindo que o software continue funcionando com máxima perfeição a longo prazo.
+            </p>
+          </div>
+
+          <div class="principles-list">
+            <div class="surface-card principle-card">
+              <span class="principle-num"><i class="fas fa-check"></i></span>
+              <div>
+                <h3 class="principle-title">Soluções feitas para quem usa</h3>
+                <p class="principle-text">
+                  Interfaces limpas e fáceis. O usuário não precisa de treinamento para entender seu app ou site.
+                </p>
+              </div>
+            </div>
+
+            <div class="surface-card principle-card">
+              <span class="principle-num"><i class="fas fa-shield"></i></span>
+              <div>
+                <h3 class="principle-title">Engenharia sólida nos bastidores</h3>
+                <p class="principle-text">
+                  Bancos de dados seguros, servidores que não caem e código preparado para suportar o crescimento da sua empresa.
+                </p>
+              </div>
+            </div>
+
+            <div class="surface-card principle-card">
+              <span class="principle-num"><i class="fas fa-handshake"></i></span>
+              <div>
+                <h3 class="principle-title">Transparência e parceria</h3>
+                <p class="principle-text">
+                  Você acompanha o desenvolvimento sem surpresas, com entregas parciais e prazos rigorosamente cumpridos.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SEÇÃO 07: CONTATO DIRETO (WHATSAPP EM DESTAQUE)
+         ========================================================================== -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact-box">
+          <div class="contact-copy">
+            <span class="section-tag"><i class="fas fa-paper-plane"></i> Inicie uma Conversa</span>
+            <h3>Tem uma ideia ou precisa acelerar sua empresa?</h3>
+            <p>
+              Vamos tomar um café virtual e conversar sem compromisso sobre o seu aplicativo, loja virtual ou automação corporativa.
+            </p>
+          </div>
+
+          <div class="contact-channels">
+            <!-- WhatsApp -->
+            <div class="channel-row">
+              <div class="channel-info">
+                <span class="channel-label"><i class="fab fa-whatsapp" style="color: #25d366;"></i> WhatsApp Direto</span>
+                <span class="channel-value">+55 (19) 98429-1707</span>
+              </div>
+              <div class="channel-actions">
+                <button type="button" class="btn-mini" onclick="copyToClipboard('+5519984291707', 'WhatsApp')">
+                  <i class="far fa-copy"></i> Copiar
+                </button>
+                <a href="https://wa.me/5519984291707?text=Ol%C3%A1%20Gabriel!%20Vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener noreferrer" class="btn-mini" style="background: #25d366; color: #ffffff; border-color: #25d366;">
+                  Conversar Agora <i class="fas fa-arrow-up-right-from-square" style="font-size: 0.65rem;"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- E-mail -->
+            <div class="channel-row">
+              <div class="channel-info">
+                <span class="channel-label"><i class="far fa-envelope"></i> E-mail Profissional</span>
+                <span class="channel-value">gabriel@gmdevwoks.com.br</span>
+              </div>
+              <div class="channel-actions">
+                <button type="button" class="btn-mini" onclick="copyToClipboard('gabriel@gmdevwoks.com.br', 'E-mail')">
+                  <i class="far fa-copy"></i> Copiar
+                </button>
+                <a href="mailto:gabriel@gmdevwoks.com.br" class="btn-mini">
+                  Enviar Mensagem <i class="fas fa-arrow-up-right-from-square" style="font-size: 0.65rem;"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- LinkedIn -->
+            <div class="channel-row">
+              <div class="channel-info">
+                <span class="channel-label"><i class="fab fa-linkedin-in" style="color: #0a66c2;"></i> LinkedIn</span>
+                <span class="channel-value">in/gabriel-campos-marques</span>
+              </div>
+              <div class="channel-actions">
+                <a href="https://www.linkedin.com/in/gabriel-campos-marques-5597b319b" target="_blank" rel="noopener noreferrer" class="btn-mini">
+                  Ver Perfil <i class="fas fa-arrow-up-right-from-square" style="font-size: 0.65rem;"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
 
   <!-- ==========================================================================
        FOOTER
        ========================================================================== -->
-  <footer class="cyber-footer">
-    <div class="container footer-inner-row">
+  <footer class="site-footer">
+    <div class="container footer-inner">
       <div>
-        &copy; <span id="yearSpan">2025</span> GABRIEL MARQUES — Full Stack Developer.
+        &copy; <span id="yearSpan">2026</span> Gabriel Marques · GM DevWorks. Todos os direitos reservados.
       </div>
-      <div class="footer-nav-links">
-        <a href="#hero">Topo</a>
-        <a href="#about">Sobre</a>
-        <a href="#stack">Stack</a>
+      <div class="footer-links">
+        <a href="#top">Topo</a>
+        <a href="#solutions">Soluções</a>
         <a href="#projects">Projetos</a>
-        <a href="#experience">Trajetória</a>
-        <a href="#contact">Contato</a>
+        <a href="#process">Como Realizo</a>
+        <a href="#architecture">Tecnologia</a>
+        <a href="assets/Profile.pdf" target="_blank" rel="noopener noreferrer">Currículo (PDF)</a>
         <a href="https://wa.me/5519984291707" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-        <a href="https://www.linkedin.com/in/gabriel-campos-marques-5597b319b" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       </div>
     </div>
   </footer>
 
-  <!-- Cyber Toast Notification -->
-  <div id="cyberToast" class="cyber-toast">
-    <i class="fas fa-circle-check"></i> <span id="toastMsg">Copiado com sucesso!</span>
+  <!-- ==========================================================================
+       MENU DE COMANDOS / ATALHOS (⌘K)
+       ========================================================================== -->
+  <div class="cmd-backdrop" id="cmdBackdrop" role="dialog" aria-modal="true" aria-label="Menu de comandos">
+    <div class="cmd-dialog">
+      <div class="cmd-search-bar">
+        <i class="fas fa-magnifying-glass"></i>
+        <input type="text" class="cmd-input" id="cmdInput" placeholder="Busque uma seção ou ação (ex: WhatsApp, Projetos, App...)" autocomplete="off">
+        <span class="cmd-esc">ESC</span>
+      </div>
+
+      <div class="cmd-list" id="cmdList">
+        <div class="cmd-group-title">Navegação Rápida</div>
+        <button type="button" class="cmd-item" data-action="scroll" data-target="#solutions" data-keywords="solucoes servicos o que faco aplicativos sites lojas">
+          <span class="cmd-item-left"><i class="fas fa-sparkles"></i> Ver Soluções para Empresas</span>
+          <span class="cmd-item-shortcut">01</span>
+        </button>
+        <button type="button" class="cmd-item" data-action="scroll" data-target="#projects" data-keywords="projetos portfolio fixa facil ventura tesouraria finance">
+          <span class="cmd-item-left"><i class="fas fa-box-archive"></i> Ver Projetos Realizados</span>
+          <span class="cmd-item-shortcut">02</span>
+        </button>
+        <button type="button" class="cmd-item" data-action="scroll" data-target="#process" data-keywords="como realizo processo metodo etapas passo a passo">
+          <span class="cmd-item-left"><i class="fas fa-route"></i> Ver Como Consigo Realizar Isso</span>
+          <span class="cmd-item-shortcut">03</span>
+        </button>
+        <button type="button" class="cmd-item" data-action="scroll" data-target="#architecture" data-keywords="tecnologia stack flutter python django kubernetes docker">
+          <span class="cmd-item-left"><i class="fas fa-microchip"></i> Ver Tecnologias &amp; Rigor Técnico</span>
+          <span class="cmd-item-shortcut">04</span>
+        </button>
+        <button type="button" class="cmd-item" data-action="scroll" data-target="#experience" data-keywords="trajetoria carreira r7st unisal formacao experiencia">
+          <span class="cmd-item-left"><i class="fas fa-briefcase"></i> Ver Trajetória &amp; Formação</span>
+          <span class="cmd-item-shortcut">05</span>
+        </button>
+
+        <div class="cmd-group-title">Contato &amp; Conversa</div>
+        <button type="button" class="cmd-item" data-action="link" data-target="https://wa.me/5519984291707?text=Ol%C3%A1%20Gabriel!%20Vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto." data-keywords="whatsapp mensagem conversar falar orcamento">
+          <span class="cmd-item-left"><i class="fab fa-whatsapp"></i> Conversar no WhatsApp</span>
+          <span class="cmd-item-shortcut">WhatsApp</span>
+        </button>
+        <button type="button" class="cmd-item" data-action="copy-email" data-keywords="email copiar contato">
+          <span class="cmd-item-left"><i class="far fa-copy"></i> Copiar E-mail (gabriel@gmdevwoks.com.br)</span>
+          <span class="cmd-item-shortcut">Copiar</span>
+        </button>
+        <button type="button" class="cmd-item" data-action="link" data-target="https://www.linkedin.com/in/gabriel-campos-marques-5597b319b" data-keywords="linkedin rede social">
+          <span class="cmd-item-left"><i class="fab fa-linkedin-in"></i> Abrir perfil no LinkedIn</span>
+          <span class="cmd-item-shortcut">↗</span>
+        </button>
+        <button type="button" class="cmd-item" data-action="link" data-target="assets/Profile.pdf" data-keywords="curriculo cv pdf download">
+          <span class="cmd-item-left"><i class="far fa-file-pdf"></i> Visualizar Currículo (PDF)</span>
+          <span class="cmd-item-shortcut">PDF</span>
+        </button>
+
+        <div class="cmd-group-title">Aparência</div>
+        <button type="button" class="cmd-item" data-action="theme" data-keywords="tema claro escuro dark light modo">
+          <span class="cmd-item-left"><i class="fas fa-circle-half-stroke"></i> Alternar Tema (Escuro / Claro)</span>
+          <span class="cmd-item-shortcut">Tema</span>
+        </button>
+      </div>
+    </div>
   </div>
 
-  <!-- JavaScript -->
-  <script src="js/layout-capa.js"></script>
+  <!-- Toast Notification -->
+  <div id="toast" class="toast" role="status" aria-live="polite">
+    <i class="fas fa-check-circle" style="color: var(--status-emerald);"></i>
+    <span id="toastText">Copiado para a área de transferência</span>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
 </body>
 </html>
