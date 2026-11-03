@@ -1,7 +1,9 @@
 .git
+.github
 .gitignore
 .DS_Store
 **/.DS_Store
+k8s/
 erros/
 *.md
 docker-compose*.yml
