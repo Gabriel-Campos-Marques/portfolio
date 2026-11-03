@@ -13,6 +13,7 @@ spec:
       namespace: envoy-gateway-system
   hostnames:
     - "gabrielmarques.dev.br"
+    - "www.gabrielmarques.dev.br"
   rules:
     - matches:
         - path:
