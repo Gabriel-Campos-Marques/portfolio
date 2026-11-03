@@ -3,6 +3,7 @@
 .gitignore
 .DS_Store
 **/.DS_Store
+.cockpit/
 k8s/
 erros/
 *.md
