@@ -1,6 +1,6 @@
 FROM nginx:1.27-alpine
 
-LABEL maintainer="Gabriel Marques <gabriel@gmdevwoks.com.br>"
+LABEL maintainer="Gabriel Marques <gabriel@gmdevworks.com.br>"
 LABEL description="Portfolio Gabriel Marques - Minimalist Software Engineering"
 
 # Copy custom Nginx configuration
